@@ -1,10 +1,8 @@
-
-
 name: Update Bank of Ghana Rates
 
 on:
   schedule:
-    - cron: "0 6 * * *"   # every day 6AM UTC
+    - cron: "0 6 * * *"
   workflow_dispatch:
 
 jobs:
@@ -19,56 +17,53 @@ jobs:
 
       - name: Scrape Bank of Ghana FX rates
         run: |
-          python3 - <<EOF
-          import requests
-          from bs4 import BeautifulSoup
+          python3 <<'PY'
           import json
           from datetime import date
+          import requests
+          from bs4 import BeautifulSoup
 
-          URL = "https://www.bog.gov.gh/treasury-and-the-markets/daily-interbank-fx-rates/"
+          url = "https://www.bog.gov.gh/treasury-and-the-markets/historical-interbank-fx-rates/"
+          response = requests.get(url, timeout=30)
+          response.raise_for_status()
 
-          r = requests.get(URL)
-          soup = BeautifulSoup(r.text, "html.parser")
+          soup = BeautifulSoup(response.text, "html.parser")
+          rates = {"GHS": 1}
 
-          rates = {
-              "GHS": 1
+          mapping = {
+              "US Dollar": "USD",
+              "Euro": "EUR",
+              "Pound Sterling": "GBP",
+              "Yuan Renminbi": "CNY",
+              "Naira": "NGN"
           }
 
-          # Find table rows
-          rows = soup.find_all("tr")
-
-          for row in rows:
+          for row in soup.select("table tbody tr"):
               cols = row.find_all("td")
-              if len(cols) >= 6:
-                  currency = cols[1].text.strip()
-                  mid_rate = cols[5].text.strip()
+              if len(cols) < 6:
+                  continue
 
-                  try:
-                      rate = float(mid_rate.replace(",", ""))
-                  except:
-                      continue
+              currency = cols[1].get_text(strip=True)
+              mid_rate = cols[5].get_text(strip=True)
 
-                  mapping = {
-                      "US Dollar": "USD",
-                      "Euro": "EUR",
-                      "Pound Sterling": "GBP",
-                      "Yuan Renminbi": "CNY",
-                      "Naira": "NGN"
-                  }
+              try:
+                  rate = float(mid_rate.replace(",", ""))
+              except ValueError:
+                  continue
 
-                  if currency in mapping:
-                      rates[mapping[currency]] = rate
+              if currency in mapping:
+                  rates[mapping[currency]] = rate
 
           data = {
               "date": str(date.today()),
               "rates": rates
           }
 
-          with open("rates.json", "w") as f:
+          with open("rates.json", "w", encoding="utf-8") as f:
               json.dump(data, f, indent=2)
 
           print("Updated rates:", data)
-          EOF
+          PY
 
       - name: Commit changes
         run: |

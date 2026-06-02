@@ -1,34 +1,95 @@
 let rates = {};
+const inputs = ["GHS", "USD", "EUR", "GBP", "CNY", "NGN"];
+let isUpdating = false;
 
 async function loadRates() {
-  const res = await fetch('rates.json');
-  const data = await res.json();
-  rates = data.rates;
+  try {
+    const res = await fetch("./rates.json");
+    if (!res.ok) {
+      throw new Error("Failed to load rates.json");
+    }
 
-  document.getElementById("lastUpdated").innerText =
-    "Last Updated: " + data.date;
+    const data = await res.json();
+    rates = data.rates || {};
+
+    const lastUpdated = document.getElementById("lastUpdated");
+    if (lastUpdated) {
+      lastUpdated.textContent = "Last Updated: " + (data.date || "N/A");
+    }
+
+    attachInputHandlers();
+    seedDefaultValue();
+  } catch (error) {
+    const lastUpdated = document.getElementById("lastUpdated");
+    if (lastUpdated) {
+      lastUpdated.textContent = "Unable to load exchange rates";
+    }
+    console.error(error);
+  }
 }
 
-const inputs = ["GHS", "USD", "EUR", "GBP", "CNY", "NGN"];
+function attachInputHandlers() {
+  inputs.forEach((id) => {
+    const input = document.getElementById(id);
+    if (!input) return;
 
-inputs.forEach(id => {
-  document.getElementById(id).addEventListener("input", (e) => {
-    const value = parseFloat(e.target.value);
-    if (isNaN(value)) return;
+    input.addEventListener("input", (event) => {
+      if (isUpdating) return;
 
-    const base = id;
+      const value = parseFloat(event.target.value);
 
-    // Convert everything via GHS
-    let inGHS = value / rates[base];
-
-    inputs.forEach(cur => {
-      if (cur !== base) {
-        const converted = inGHS * rates[cur];
-        document.getElementById(cur).value =
-          converted.toFixed(2);
+      if (Number.isNaN(value)) {
+        clearOtherInputs(id);
+        return;
       }
+
+      convertFrom(id, value);
+    });
+
+    input.addEventListener("focus", () => {
+      input.select();
     });
   });
-});
+}
 
-loadRates();
+function convertFrom(base, value) {
+  if (!rates[base]) return;
+
+  isUpdating = true;
+  const inGHS = value / rates[base];
+
+  inputs.forEach((currency) => {
+    const field = document.getElementById(currency);
+    if (!field) return;
+
+    if (currency === base) {
+      field.value = value;
+      return;
+    }
+
+    const converted = inGHS * rates[currency];
+    field.value = Number.isFinite(converted) ? converted.toFixed(2) : "";
+  });
+
+  isUpdating = false;
+}
+
+function clearOtherInputs(activeId) {
+  inputs.forEach((currency) => {
+    if (currency === activeId) return;
+    const field = document.getElementById(currency);
+    if (field) {
+      field.value = "";
+    }
+  });
+}
+
+function seedDefaultValue() {
+  const ghsInput = document.getElementById("GHS");
+  if (!ghsInput) return;
+
+  ghsInput.value = "1";
+  convertFrom("GHS", 1);
+}
+
+document.addEventListener("DOMContentLoaded", loadRates);

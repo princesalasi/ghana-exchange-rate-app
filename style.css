@@ -1,31 +1,32 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
-  overflow: hidden;
   font-family: Arial, sans-serif;
   background: #0f172a;
   color: white;
 }
 
-/* FULL SCREEN APP */
-.container {
-  height: 100vh;
-  height: 100dvh; /* fixes iPhone bottom space */
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
+* {
   box-sizing: border-box;
 }
 
-/* HEADER */
+.container {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 10px;
+}
+
 h1 {
   font-size: 28px;
   text-align: center;
-  margin: 4px 0;
-  flex-shrink: 0;
+  margin: 4px 0 0;
 }
 
 #lastUpdated {
@@ -33,52 +34,69 @@ h1 {
   font-size: 14px;
   opacity: 0.7;
   margin-bottom: 6px;
-  flex-shrink: 0;
 }
 
-/* LIST AREA */
 .grid {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+  width: 100%;
 }
 
-/* EACH ROW FILLS SCREEN */
 .input-row {
-  flex: 1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 14px;
+  width: 100%;
   background: #1e293b;
   border-radius: 18px;
   padding: 18px;
-  box-sizing: border-box;
 }
 
-/* 🔥 BIG VALUE */
+.currency {
+  min-width: 70px;
+  font-weight: 700;
+  font-size: 28px;
+  color: #38bdf8;
+}
+
 input {
   flex: 1;
-  font-size: 56px;
+  min-width: 0;
+  font-size: 48px;
   font-weight: 800;
   border: none;
   outline: none;
   background: transparent;
   color: white;
-}
-
-/* 🔥 BIG CURRENCY */
-.currency {
-  width: 120px;
   text-align: right;
-  font-weight: bold;
-  font-size: 32px;
-  color: #38bdf8;
 }
 
-/* REMOVE NUMBER SPINNERS */
+input::placeholder {
+  color: #94a3b8;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 480px) {
+  .currency {
+    min-width: 60px;
+    font-size: 22px;
+  }
+
+  input {
+    font-size: 36px;
+  }
+
+  .input-row {
+    padding: 16px;
+  }
 }

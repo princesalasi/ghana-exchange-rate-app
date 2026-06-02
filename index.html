@@ -2,56 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-
-  <!-- FIX iPhone zoom + viewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-  <title>Exchange Rate App</title>
-
-  <link rel="stylesheet" href="style.css?v=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Ghana Exchange Rates</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
-
 <body>
+  <main class="container">
+    <h1>Ghana Exchange Rates</h1>
+    <div id="lastUpdated">Loading latest rates...</div>
 
-  <div class="container">
-
-    <h1>FX Converter</h1>
-    <p id="lastUpdated">Loading rates...</p>
-
-    <div class="grid">
-
-      <div class="input-row">
-        <input type="number" id="GHS" inputmode="decimal" />
+    <section class="grid" aria-label="Currency converter">
+      <label class="input-row" for="GHS">
         <span class="currency">GHS</span>
-      </div>
+        <input id="GHS" type="number" inputmode="decimal" placeholder="0" />
+      </label>
 
-      <div class="input-row">
-        <input type="number" id="USD" inputmode="decimal" />
+      <label class="input-row" for="USD">
         <span class="currency">USD</span>
-      </div>
+        <input id="USD" type="number" inputmode="decimal" placeholder="0" />
+      </label>
 
-      <div class="input-row">
-        <input type="number" id="EUR" inputmode="decimal" />
+      <label class="input-row" for="EUR">
         <span class="currency">EUR</span>
-      </div>
+        <input id="EUR" type="number" inputmode="decimal" placeholder="0" />
+      </label>
 
-      <div class="input-row">
-        <input type="number" id="GBP" inputmode="decimal" />
+      <label class="input-row" for="GBP">
         <span class="currency">GBP</span>
-      </div>
+        <input id="GBP" type="number" inputmode="decimal" placeholder="0" />
+      </label>
 
-      <div class="input-row">
-        <input type="number" id="CNY" inputmode="decimal" />
+      <label class="input-row" for="CNY">
         <span class="currency">CNY</span>
-      </div>
+        <input id="CNY" type="number" inputmode="decimal" placeholder="0" />
+      </label>
 
-      <div class="input-row">
-        <input type="number" id="NGN" inputmode="decimal" />
+      <label class="input-row" for="NGN">
         <span class="currency">NGN</span>
-      </div>
+        <input id="NGN" type="number" inputmode="decimal" placeholder="0" />
+      </label>
+    </section>
+  </main>
 
-    </div>
-  </div>
-
+  <script src="./script.js" defer></script>
 </body>
 </html>
