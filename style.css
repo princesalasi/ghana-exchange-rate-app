@@ -1,26 +1,91 @@
-
-body {
-  font-family: Arial;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
   background: #0f172a;
   color: white;
-  text-align: center;
 }
 
+/* FIX iPHONE VIEWPORT ISSUES */
 .container {
-  padding: 20px;
+  height: 100vh;
+  height: 100dvh; /* IMPORTANT FOR IPHONE */
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  box-sizing: border-box;
 }
 
+/* HEADER (FIXED SPACE, NOT FLEXIBLE) */
+h1 {
+  font-size: 32px;
+  text-align: center;
+  margin: 4px 0;
+  flex-shrink: 0;
+}
+
+#lastUpdated {
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 6px;
+  flex-shrink: 0;
+}
+
+/* GRID TAKES REMAINING SPACE */
 .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  max-width: 400px;
-  margin: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
+/* EACH ROW EQUAL HEIGHT */
+.input-row {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1e293b;
+  border-radius: 18px;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* 🔥 BIG VALUE */
 input {
-  padding: 15px;
-  font-size: 18px;
-  border-radius: 10px;
+  flex: 1;
+  font-size: 72px;   /* BIG AND STABLE */
+  font-weight: 800;
   border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+}
+
+/* PLACEHOLDER */
+input::placeholder {
+  color: #64748b;
+  font-size: 48px;
+  font-weight: 600;
+}
+
+/* 🔥 BIG CURRENCY */
+.currency {
+  width: 140px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 36px;
+  color: #38bdf8;
+}
+
+/* REMOVE NUMBER SPINNERS */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
