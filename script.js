@@ -12,7 +12,9 @@ async function loadRates() {
 
     const lastUpdated = document.getElementById('lastUpdated');
     if (lastUpdated) {
-      const updatedAt = data.updated_at ? new Date(data.updated_at).toLocaleString() : 'Unknown time';
+      const updatedAt = data.updated_at
+        ? new Date(data.updated_at).toLocaleString()
+        : 'Unknown time';
       const sourceDate = data.source_page_date || 'Unknown date';
       lastUpdated.textContent = `BoG Date: ${sourceDate} | Updated: ${updatedAt}`;
     }
@@ -34,7 +36,9 @@ function attachInputHandlers() {
     input.addEventListener('input', (event) => {
       if (isUpdating) return;
 
-      const value = parseFloat(event.target.value);
+      const rawValue = event.target.value.replace(/,/g, '');
+      const value = parseFloat(rawValue);
+
       if (Number.isNaN(value)) {
         clearOtherInputs(id);
         return;
@@ -43,7 +47,18 @@ function attachInputHandlers() {
       convertFrom(id, value);
     });
 
-    input.addEventListener('focus', () => input.select());
+    input.addEventListener('focus', () => {
+      const rawValue = input.value.replace(/,/g, '');
+      input.value = rawValue;
+      input.select();
+    });
+
+    input.addEventListener('blur', () => {
+      const value = parseFloat(input.value.replace(/,/g, ''));
+      if (!Number.isNaN(value)) {
+        input.value = formatNumber(value);
+      }
+    });
   });
 }
 
@@ -57,6 +72,13 @@ function fromGHS(currency, ghsValue) {
   return ghsValue / rates[currency];
 }
 
+function formatNumber(value) {
+  return value.toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}
+
 function convertFrom(base, value) {
   if (base !== 'GHS' && !rates[base]) return;
 
@@ -68,7 +90,7 @@ function convertFrom(base, value) {
     if (!field) return;
 
     const converted = fromGHS(currency, ghsValue);
-    field.value = Number.isFinite(converted) ? Number(converted.toFixed(4)).toString() : '';
+    field.value = Number.isFinite(converted) ? formatNumber(converted) : '';
   });
 
   isUpdating = false;
@@ -85,7 +107,6 @@ function clearOtherInputs(activeId) {
 function seedDefaultValue() {
   const ghsInput = document.getElementById('GHS');
   if (!ghsInput) return;
-  ghsInput.value = '1';
   convertFrom('GHS', 1);
 }
 
