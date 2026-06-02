@@ -1,11 +1,14 @@
 {
-  "date": "2026-06-02",
+  "source": "Bank of Ghana Daily Interbank FX Rates",
+  "rate_type": "selling",
+  "source_page_date": "22 May 2026",
+  "updated_at": "2026-06-02T20:33:00+00:00",
   "rates": {
     "GHS": 1,
-    "USD": 0.083,
-    "EUR": 0.077,
-    "GBP": 0.066,
-    "CNY": 0.60,
-    "NGN": 125
+    "USD": 11.6308,
+    "EUR": 13.4933,
+    "GBP": 15.6306,
+    "CNY": 1.7114,
+    "NGN": 118.0981
   }
 }

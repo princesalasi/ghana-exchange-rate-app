@@ -14,7 +14,14 @@ async function loadRates() {
 
     const lastUpdated = document.getElementById("lastUpdated");
     if (lastUpdated) {
-      lastUpdated.textContent = "Last Updated: " + (data.date || "N/A");
+      const updatedAt = data.updated_at
+        ? new Date(data.updated_at).toLocaleString()
+        : "Unknown time";
+
+      const sourceDate = data.source_page_date || "Unknown date";
+
+      lastUpdated.textContent =
+        `BoG Date: ${sourceDate} | Updated: ${updatedAt}`;
     }
 
     attachInputHandlers();
@@ -68,7 +75,7 @@ function convertFrom(base, value) {
     }
 
     const converted = inGHS * rates[currency];
-    field.value = Number.isFinite(converted) ? converted.toFixed(2) : "";
+    field.value = Number.isFinite(converted) ? converted.toFixed(4) : "";
   });
 
   isUpdating = false;

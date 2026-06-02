@@ -20,7 +20,7 @@ jobs:
           python3 <<'PY'
           import json
           import re
-          from datetime import date
+          from datetime import datetime, timezone
           import requests
           from bs4 import BeautifulSoup
 
@@ -53,26 +53,23 @@ jobs:
               if page_date is None and date_pattern.match(line):
                   page_date = line
 
-              if line in mapping:
-                  if i + 4 < len(lines):
-                      row_date = lines[i - 1] if i > 0 and date_pattern.match(lines[i - 1]) else page_date
-                      currency_pair = lines[i + 1]
-                      buying = lines[i + 2]
-                      selling = lines[i + 3]
-                      mid_rate = lines[i + 4]
+              if line in mapping and i + 4 < len(lines):
+                  selling = lines[i + 3]
 
-                      if number_pattern.match(selling):
-                          rates[mapping[line]] = float(selling.replace(",", ""))
+                  if number_pattern.match(selling):
+                      rates[mapping[line]] = float(selling.replace(",", ""))
 
                   i += 5
               else:
                   i += 1
 
+          updated_at = datetime.now(timezone.utc).isoformat()
+
           data = {
-              "date": str(date.today()),
-              "source_page_date": page_date,
               "source": "Bank of Ghana Daily Interbank FX Rates",
               "rate_type": "selling",
+              "source_page_date": page_date,
+              "updated_at": updated_at,
               "rates": rates
           }
 
