@@ -47,8 +47,9 @@ function attachInputHandlers() {
       const value = parseFloat(cleaned);
       if (Number.isNaN(value)) return;
 
-      input.dataset.raw = value.toString();
-      convertFrom(id, value, id);
+      const roundedValue = roundTo2(value);
+      input.dataset.raw = roundedValue.toFixed(2);
+      convertFrom(id, roundedValue, id);
     });
 
     input.addEventListener("focus", () => {
@@ -68,6 +69,10 @@ function attachInputHandlers() {
 
 function cleanNumber(value) {
   return value.replace(/,/g, "").replace(/[^\d.]/g, "");
+}
+
+function roundTo2(value) {
+  return Math.round((value + Number.EPSILON) * 100) / 100;
 }
 
 function toGHS(currency, value) {
@@ -91,7 +96,7 @@ function convertFrom(base, value, activeField = null) {
   if (base !== "GHS" && !rates[base]) return;
 
   isUpdating = true;
-  const ghsValue = toGHS(base, value);
+  const ghsValue = roundTo2(toGHS(base, value));
 
   inputs.forEach((currency) => {
     const field = document.getElementById(currency);
@@ -104,12 +109,13 @@ function convertFrom(base, value, activeField = null) {
       return;
     }
 
-    field.dataset.raw = converted.toString();
+    const rounded = roundTo2(converted);
+    field.dataset.raw = rounded.toFixed(2);
 
     if (currency === activeField && document.activeElement === field) {
       field.value = field.dataset.raw;
     } else {
-      field.value = formatNumber(converted);
+      field.value = formatNumber(rounded);
     }
   });
 
@@ -135,7 +141,7 @@ function seedDefaultValue() {
   const ghsInput = document.getElementById("GHS");
   if (!ghsInput) return;
 
-  ghsInput.dataset.raw = "1";
+  ghsInput.dataset.raw = "1.00";
   convertFrom("GHS", 1);
 }
 
