@@ -38,7 +38,11 @@ function attachInputHandlers() {
     input.addEventListener("input", (event) => {
       if (isUpdating) return;
 
-      const cleaned = cleanNumber(event.target.value);
+      const rawText = event.target.value;
+      const cleaned = cleanNumber(rawText);
+
+      event.target.dataset.raw = cleaned;
+
       if (cleaned === "" || cleaned === ".") {
         clearOtherInputs(id);
         return;
@@ -47,20 +51,18 @@ function attachInputHandlers() {
       const value = parseFloat(cleaned);
       if (Number.isNaN(value)) return;
 
-      const roundedValue = roundTo2(value);
-      input.dataset.raw = roundedValue.toFixed(2);
-      convertFrom(id, roundedValue, id);
+      convertFrom(id, value);
     });
 
     input.addEventListener("focus", () => {
-      const raw = input.dataset.raw || cleanNumber(input.value);
-      if (raw) input.value = raw;
+      const raw = input.dataset.raw ?? cleanNumber(input.value);
+      input.value = raw;
       input.select();
     });
 
     input.addEventListener("blur", () => {
       const raw = input.dataset.raw;
-      if (raw && !Number.isNaN(parseFloat(raw))) {
+      if (raw && raw !== "." && !Number.isNaN(parseFloat(raw))) {
         input.value = formatNumber(parseFloat(raw));
       }
     });
@@ -68,7 +70,16 @@ function attachInputHandlers() {
 }
 
 function cleanNumber(value) {
-  return value.replace(/,/g, "").replace(/[^\d.]/g, "");
+  let cleaned = value.replace(/,/g, "").replace(/[^\d.]/g, "");
+
+  const firstDot = cleaned.indexOf(".");
+  if (firstDot !== -1) {
+    cleaned =
+      cleaned.slice(0, firstDot + 1) +
+      cleaned.slice(firstDot + 1).replace(/\./g, "");
+  }
+
+  return cleaned;
 }
 
 function roundTo2(value) {
@@ -92,17 +103,22 @@ function formatNumber(value) {
   });
 }
 
-function convertFrom(base, value, activeField = null) {
+function convertFrom(base, value) {
   if (base !== "GHS" && !rates[base]) return;
 
   isUpdating = true;
-  const ghsValue = roundTo2(toGHS(base, value));
+  const ghsValue = toGHS(base, value);
 
   inputs.forEach((currency) => {
     const field = document.getElementById(currency);
     if (!field) return;
 
+    if (currency === base && document.activeElement === field) {
+      return;
+    }
+
     const converted = fromGHS(currency, ghsValue);
+
     if (!Number.isFinite(converted)) {
       field.dataset.raw = "";
       field.value = "";
@@ -111,12 +127,7 @@ function convertFrom(base, value, activeField = null) {
 
     const rounded = roundTo2(converted);
     field.dataset.raw = rounded.toFixed(2);
-
-    if (currency === activeField && document.activeElement === field) {
-      field.value = field.dataset.raw;
-    } else {
-      field.value = formatNumber(rounded);
-    }
+    field.value = formatNumber(rounded);
   });
 
   isUpdating = false;
@@ -125,13 +136,7 @@ function convertFrom(base, value, activeField = null) {
 function clearOtherInputs(activeId) {
   inputs.forEach((currency) => {
     const field = document.getElementById(currency);
-    if (!field) return;
-
-    if (currency === activeId) {
-      field.dataset.raw = "";
-      return;
-    }
-
+    if (!field || currency === activeId) return;
     field.value = "";
     field.dataset.raw = "";
   });
@@ -141,7 +146,8 @@ function seedDefaultValue() {
   const ghsInput = document.getElementById("GHS");
   if (!ghsInput) return;
 
-  ghsInput.dataset.raw = "1.00";
+  ghsInput.dataset.raw = "1";
+  ghsInput.value = formatNumber(1);
   convertFrom("GHS", 1);
 }
 
