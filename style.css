@@ -1,0 +1,26 @@
+
+body {
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  max-width: 400px;
+  margin: auto;
+}
+
+input {
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+}

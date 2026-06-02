@@ -1,0 +1,79 @@
+
+
+name: Update Bank of Ghana Rates
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # every day 6AM UTC
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Scrape Bank of Ghana FX rates
+        run: |
+          python3 - <<EOF
+          import requests
+          from bs4 import BeautifulSoup
+          import json
+          from datetime import date
+
+          URL = "https://www.bog.gov.gh/treasury-and-the-markets/daily-interbank-fx-rates/"
+
+          r = requests.get(URL)
+          soup = BeautifulSoup(r.text, "html.parser")
+
+          rates = {
+              "GHS": 1
+          }
+
+          # Find table rows
+          rows = soup.find_all("tr")
+
+          for row in rows:
+              cols = row.find_all("td")
+              if len(cols) >= 6:
+                  currency = cols[1].text.strip()
+                  mid_rate = cols[5].text.strip()
+
+                  try:
+                      rate = float(mid_rate.replace(",", ""))
+                  except:
+                      continue
+
+                  mapping = {
+                      "US Dollar": "USD",
+                      "Euro": "EUR",
+                      "Pound Sterling": "GBP",
+                      "Yuan Renminbi": "CNY",
+                      "Naira": "NGN"
+                  }
+
+                  if currency in mapping:
+                      rates[mapping[currency]] = rate
+
+          data = {
+              "date": str(date.today()),
+              "rates": rates
+          }
+
+          with open("rates.json", "w") as f:
+              json.dump(data, f, indent=2)
+
+          print("Updated rates:", data)
+          EOF
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add rates.json
+          git commit -m "Auto update BoG rates" || exit 0
+          git push
