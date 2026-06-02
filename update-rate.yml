@@ -57,7 +57,7 @@ jobs:
                   selling = lines[i + 3]
 
                   if number_pattern.match(selling):
-                      value = float(selling.replace(',', ''))
+                      value = float(selling.replace(",", ""))
                       code = supported[line]
 
                       if pair == f"{code}GHS":
