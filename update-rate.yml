@@ -32,7 +32,7 @@ jobs:
           text = soup.get_text("\n", strip=True)
           lines = [line.strip() for line in text.splitlines() if line.strip()]
 
-          mapping = {
+          supported = {
               "US Dollar": "USD",
               "Euro": "EUR",
               "Pound Sterling": "GBP",
@@ -42,7 +42,6 @@ jobs:
 
           rates = {"GHS": 1}
           page_date = None
-
           date_pattern = re.compile(r"^\d{1,2}\s+[A-Za-z]{3}\s+\d{4}$")
           number_pattern = re.compile(r"^\d[\d,]*\.\d+$")
 
@@ -53,30 +52,35 @@ jobs:
               if page_date is None and date_pattern.match(line):
                   page_date = line
 
-              if line in mapping and i + 4 < len(lines):
+              if line in supported and i + 4 < len(lines):
+                  pair = lines[i + 1]
                   selling = lines[i + 3]
 
                   if number_pattern.match(selling):
-                      rates[mapping[line]] = float(selling.replace(",", ""))
+                      value = float(selling.replace(',', ''))
+                      code = supported[line]
+
+                      if pair == f"{code}GHS":
+                          rates[code] = value
+                      elif pair == f"GHS{code}":
+                          rates[code] = 1 / value
 
                   i += 5
               else:
                   i += 1
 
-          updated_at = datetime.now(timezone.utc).isoformat()
-
           data = {
               "source": "Bank of Ghana Daily Interbank FX Rates",
               "rate_type": "selling",
               "source_page_date": page_date,
-              "updated_at": updated_at,
+              "updated_at": datetime.now(timezone.utc).isoformat(),
               "rates": rates
           }
 
           with open("rates.json", "w", encoding="utf-8") as f:
               json.dump(data, f, indent=2)
 
-          print("Updated selling rates:", data)
+          print("Updated normalized selling rates:", data)
           PY
 
       - name: Commit changes
