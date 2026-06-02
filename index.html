@@ -3,64 +3,55 @@
 <head>
   <meta charset="UTF-8" />
 
-  <!-- 🔥 Prevent mobile zoom -->
+  <!-- FIX iPhone zoom + viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
   <title>Exchange Rate App</title>
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css?v=1" />
 </head>
 
 <body>
+
   <div class="container">
 
-    <h1>Exchange Rate Converter</h1>
-
+    <h1>FX Converter</h1>
     <p id="lastUpdated">Loading rates...</p>
 
     <div class="grid">
 
       <div class="input-row">
-        <input type="number" id="GHS" inputmode="decimal" pattern="[0-9]*" />
+        <input type="number" id="GHS" inputmode="decimal" />
         <span class="currency">GHS</span>
       </div>
 
       <div class="input-row">
-        <input type="number" id="USD" inputmode="decimal" pattern="[0-9]*" />
+        <input type="number" id="USD" inputmode="decimal" />
         <span class="currency">USD</span>
       </div>
 
       <div class="input-row">
-        <input type="number" id="EUR" inputmode="decimal" pattern="[0-9]*" />
+        <input type="number" id="EUR" inputmode="decimal" />
         <span class="currency">EUR</span>
       </div>
 
       <div class="input-row">
-        <input type="number" id="GBP" inputmode="decimal" pattern="[0-9]*" />
+        <input type="number" id="GBP" inputmode="decimal" />
         <span class="currency">GBP</span>
       </div>
 
       <div class="input-row">
-        <input type="number" id="CNY" inputmode="decimal" pattern="[0-9]*" />
+        <input type="number" id="CNY" inputmode="decimal" />
         <span class="currency">CNY</span>
       </div>
 
       <div class="input-row">
-        <input type="number" id="NGN" inputmode="decimal" pattern="[0-9]*" />
+        <input type="number" id="NGN" inputmode="decimal" />
         <span class="currency">NGN</span>
       </div>
 
     </div>
   </div>
 
-  <script src="script.js"></script>
-
-  <script>
-    // Register service worker (PWA)
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("service-worker.js");
-    }
-  </script>
 </body>
 </html>
