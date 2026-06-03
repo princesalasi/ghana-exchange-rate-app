@@ -98,6 +98,7 @@ jobs:
 
       - name: Prepare site folder
         run: |
+          rm -rf site
           mkdir -p site
           cp index.html site/
           cp style.css site/
