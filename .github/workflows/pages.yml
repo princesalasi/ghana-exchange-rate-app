@@ -33,7 +33,11 @@ jobs:
           from bs4 import BeautifulSoup
 
           url = "https://www.bog.gov.gh/treasury-and-the-markets/daily-interbank-fx-rates/"
-          response = requests.get(url, timeout=30)
+          response = requests.get(
+              url,
+              headers={"User-Agent": "Mozilla/5.0"},
+              timeout=30
+          )
           response.raise_for_status()
 
           soup = BeautifulSoup(response.text, "html.parser")
@@ -77,6 +81,9 @@ jobs:
               else:
                   i += 1
 
+          if len(rates) == 1:
+              raise RuntimeError("No exchange rates were extracted from the Bank of Ghana page.")
+
           data = {
               "source": "Bank of Ghana Daily Interbank FX Rates",
               "rate_type": "selling",
@@ -89,13 +96,24 @@ jobs:
               json.dump(data, f, indent=2)
           PY
 
+      - name: Prepare site folder
+        run: |
+          mkdir -p site
+          cp index.html site/
+          cp style.css site/
+          cp script.js site/
+          cp rates.json site/
+          cp manifest.json site/ || true
+          cp service-worker.js site/ || true
+          cp boglogonew.png site/ || true
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./site
 
       - name: Deploy
         id: deployment
