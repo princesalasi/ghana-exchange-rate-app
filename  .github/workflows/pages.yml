@@ -1,0 +1,117 @@
+name: Update rates and deploy Pages
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Update Bank of Ghana rates
+        run: |
+          python3 <<'PY'
+          import json
+          import re
+          from datetime import datetime, timezone
+          import requests
+          from bs4 import BeautifulSoup
+
+          url = "https://www.bog.gov.gh/treasury-and-the-markets/daily-interbank-fx-rates/"
+          response = requests.get(url, timeout=30)
+          response.raise_for_status()
+
+          soup = BeautifulSoup(response.text, "html.parser")
+          text = soup.get_text("\n", strip=True)
+          lines = [line.strip() for line in text.splitlines() if line.strip()]
+
+          supported = {
+              "US Dollar": "USD",
+              "Euro": "EUR",
+              "Pound Sterling": "GBP",
+              "Yuan Renminbi": "CNY",
+              "Naira": "NGN"
+          }
+
+          rates = {"GHS": 1}
+          page_date = None
+          date_pattern = re.compile(r"^\d{1,2}\s+[A-Za-z]{3}\s+\d{4}$")
+          number_pattern = re.compile(r"^\d[\d,]*\.\d+$")
+
+          i = 0
+          while i < len(lines):
+              line = lines[i]
+
+              if page_date is None and date_pattern.match(line):
+                  page_date = line
+
+              if line in supported and i + 4 < len(lines):
+                  pair = lines[i + 1]
+                  selling = lines[i + 3]
+
+                  if number_pattern.match(selling):
+                      value = float(selling.replace(",", ""))
+                      code = supported[line]
+
+                      if pair == f"{code}GHS":
+                          rates[code] = value
+                      elif pair == f"GHS{code}":
+                          rates[code] = 1 / value
+
+                  i += 5
+              else:
+                  i += 1
+
+          data = {
+              "source": "Bank of Ghana Daily Interbank FX Rates",
+              "rate_type": "selling",
+              "source_page_date": page_date,
+              "updated_at": datetime.now(timezone.utc).isoformat(),
+              "rates": rates
+          }
+
+          with open("rates.json", "w", encoding="utf-8") as f:
+              json.dump(data, f, indent=2)
+
+          print("Updated normalized selling rates:", data)
+          PY
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
