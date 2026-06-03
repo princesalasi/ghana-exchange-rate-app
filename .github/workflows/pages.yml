@@ -29,15 +29,16 @@ jobs:
           import re
           from datetime import datetime, timezone
           import requests
-          import certifi
           from bs4 import BeautifulSoup
-
-          url = "https://www.bog.gov.gh/treasury-and-the-markets/daily-interbank-fx-rates/"
+          import urllib3
+          
+          urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+          
           response = requests.get(
               url,
               headers={"User-Agent": "Mozilla/5.0"},
               timeout=30,
-              verify=certifi.where()
+              verify=False
           )
           response.raise_for_status()
 
