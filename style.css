@@ -70,16 +70,12 @@ h1 {
 input {
   flex: 1;
   min-width: 0;
-
   font-size: 48px;
   font-weight: 800;
-
   border: none;
   outline: none;
-
   background: transparent;
   color: white;
-
   text-align: right;
 }
 
@@ -98,9 +94,11 @@ input::-webkit-inner-spin-button {
 }
 
 
-/* ============================= */
-/* BUYING / SELLING SWITCH */
-/* ============================= */
+
+/* =============================== */
+/* BUYING / SELLING TOGGLE SWITCH */
+/* =============================== */
+
 
 .rate-switch {
 
@@ -108,65 +106,125 @@ input::-webkit-inner-spin-button {
 
   justify-content: center;
 
-  gap: 0;
+  align-items: center;
+
+  gap: 12px;
 
   margin: 6px auto;
-
-  width: fit-content;
-
-  background: #1e293b;
-
-  border-radius: 14px;
-
-  overflow: hidden;
 
 }
 
 
-.rate-switch button {
 
-  border: none;
-
-  outline: none;
-
-  background: transparent;
-
-  color: white;
-
-  padding: 10px 28px;
+.switch-label {
 
   font-size: 18px;
 
   font-weight: 700;
 
-  cursor: pointer;
-
-  transition: 0.2s ease;
+  color: white;
 
 }
 
 
-.rate-switch button.active {
+
+/* SWITCH SIZE */
+
+.switch {
+
+  position: relative;
+
+  display: inline-block;
+
+  width: 65px;
+
+  height: 34px;
+
+}
+
+
+
+/* HIDE CHECKBOX */
+
+.switch input {
+
+  opacity: 0;
+
+  width: 0;
+
+  height: 0;
+
+}
+
+
+
+/* BACKGROUND */
+
+.slider {
+
+  position: absolute;
+
+  cursor: pointer;
+
+  inset: 0;
+
+  background: #475569;
+
+  border-radius: 34px;
+
+  transition: 0.3s;
+
+}
+
+
+
+/* CIRCLE */
+
+.slider:before {
+
+  content: "";
+
+  position: absolute;
+
+  height: 26px;
+
+  width: 26px;
+
+  left: 4px;
+
+  bottom: 4px;
+
+  background: white;
+
+  border-radius: 50%;
+
+  transition: 0.3s;
+
+}
+
+
+
+/* SELLING ACTIVE */
+
+.switch input:checked + .slider {
 
   background: #38bdf8;
 
-  color: #0f172a;
-
-}
-
-
-.rate-switch button:active {
-
-  transform: scale(0.96);
-
 }
 
 
 
-/* MOBILE ADJUSTMENTS */
+.switch input:checked + .slider:before {
+
+  transform: translateX(31px);
+
+}
+
+
+
+/* MOBILE */
 
 @media (max-width: 480px) {
-
 
   .currency {
 
@@ -177,13 +235,11 @@ input::-webkit-inner-spin-button {
   }
 
 
-
   input {
 
     font-size: 36px;
 
   }
-
 
 
   .input-row {
@@ -193,14 +249,35 @@ input::-webkit-inner-spin-button {
   }
 
 
-
-  .rate-switch button {
-
-    padding: 8px 20px;
+  .switch-label {
 
     font-size: 16px;
 
   }
 
+
+  .switch {
+
+    width: 60px;
+
+    height: 32px;
+
+  }
+
+
+  .slider:before {
+
+    height: 24px;
+
+    width: 24px;
+
+  }
+
+
+  .switch input:checked + .slider:before {
+
+    transform: translateX(28px);
+
+  }
 
 }
