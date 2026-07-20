@@ -10,44 +10,75 @@
   <link rel="stylesheet" href="./style.css" />
   <title>Ghana Exchange Rates</title>
 </head>
+
 <body>
+
   <main class="container">
+
     <h1>Ghana Exchange Rates</h1>
+
+
+    <!-- NEW: BUYING / SELLING SWITCH ONLY -->
+    <div class="rate-switch">
+
+      <button id="buyingBtn" type="button">
+        Buying
+      </button>
+
+      <button id="sellingBtn" type="button" class="active">
+        Selling
+      </button>
+
+    </div>
+
+
     <div id="lastUpdated">Loading latest rates...</div>
 
+
     <section class="grid" aria-label="Currency converter">
+
       <label class="input-row" for="GHS">
         <span class="currency">GHS</span>
         <input id="GHS" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off" />
       </label>
+
 
       <label class="input-row" for="USD">
         <span class="currency">USD</span>
         <input id="USD" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off" />
       </label>
 
+
       <label class="input-row" for="EUR">
         <span class="currency">EUR</span>
         <input id="EUR" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off" />
       </label>
+
 
       <label class="input-row" for="GBP">
         <span class="currency">GBP</span>
         <input id="GBP" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off" />
       </label>
 
+
       <label class="input-row" for="CNY">
         <span class="currency">CNY</span>
         <input id="CNY" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off" />
       </label>
 
+
       <label class="input-row" for="NGN">
         <span class="currency">NGN</span>
         <input id="NGN" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off" />
       </label>
+
+
     </section>
+
   </main>
 
+
   <script src="./script.js" defer></script>
+
 </body>
 </html>
