@@ -9,7 +9,7 @@ on:
     - cron: "*/5 * * * *"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -18,128 +18,179 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: pip install requests beautifulsoup4 certifi
-
-      - name: Update Bank of Ghana rates
+      - name: Install Python packages
         run: |
-          python3 <<'PY'
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 lxml certifi
+
+      - name: Download latest Bank of Ghana rates
+        run: |
+          python <<'PY'
+
           import json
           import re
           from datetime import datetime, timezone
+
           import requests
           from bs4 import BeautifulSoup
           import urllib3
-          
+
           urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-          
-          url = "https://www.bog.gov.gh/treasury-and-the-markets/daily-interbank-fx-rates/"
-          
+
+          URL = "https://www.bog.gov.gh/treasury-and-the-markets/daily-interbank-fx-rates/"
+
           response = requests.get(
-              url,
-              headers={"User-Agent": "Mozilla/5.0"},
+              URL,
+              headers={
+                  "User-Agent":"Mozilla/5.0"
+              },
               timeout=30,
               verify=False
           )
-          
+
           response.raise_for_status()
 
-          soup = BeautifulSoup(response.text, "html.parser")
-          text = soup.get_text("\n", strip=True)
-          lines = [line.strip() for line in text.splitlines() if line.strip()]
+          soup = BeautifulSoup(response.text,"html.parser")
 
-          supported = {
-              "US Dollar": "USD",
-              "Euro": "EUR",
-              "Pound Sterling": "GBP",
-              "Yuan Renminbi": "CNY",
-              "Naira": "NGN"
+          text = soup.get_text("\n",strip=True)
+
+          lines=[l.strip() for l in text.splitlines() if l.strip()]
+
+          currencies={
+              "US Dollar":"USD",
+              "Euro":"EUR",
+              "Pound Sterling":"GBP",
+              "Yuan Renminbi":"CNY",
+              "Naira":"NGN"
           }
 
-          rates = {"GHS": 1}
-          page_date = None
-          date_pattern = re.compile(r"^\d{1,2}\s+[A-Za-z]{3}\s+\d{4}$")
-          number_pattern = re.compile(r"^\d[\d,]*\.\d+$")
+          buying={
+              "GHS":1
+          }
 
-          i = 0
+          selling={
+              "GHS":1
+          }
+
+          page_date=None
+
+          date_pattern=re.compile(r"^\d{1,2}\s+[A-Za-z]{3}\s+\d{4}$")
+
+          number_pattern=re.compile(r"^\d[\d,]*\.\d+$")
+
+          i=0
+
           while i < len(lines):
-              line = lines[i]
+
+              line=lines[i]
 
               if page_date is None and date_pattern.match(line):
-                  page_date = line
+                  page_date=line
 
-              if line in supported and i + 4 < len(lines):
-                  pair = lines[i + 1]
-                  selling = lines[i + 3]
+              if line in currencies and i+4 < len(lines):
 
-                  if number_pattern.match(selling):
-                      value = float(selling.replace(",", ""))
-                      code = supported[line]
+                  pair=lines[i+1]
 
-                      if pair == f"{code}GHS":
-                          rates[code] = value
-                      elif pair == f"GHS{code}":
-                          rates[code] = 1 / value
+                  buying_rate=lines[i+2]
 
-                  i += 5
+                  selling_rate=lines[i+3]
+
+                  code=currencies[line]
+
+                  if (
+                      number_pattern.match(buying_rate)
+                      and
+                      number_pattern.match(selling_rate)
+                  ):
+
+                      buy=float(buying_rate.replace(",",""))
+                      sell=float(selling_rate.replace(",",""))
+
+                      if pair==f"{code}GHS":
+
+                          buying[code]=buy
+                          selling[code]=sell
+
+                      elif pair==f"GHS{code}":
+
+                          buying[code]=1/buy
+                          selling[code]=1/sell
+
+                  i+=5
+
               else:
-                  i += 1
+                  i+=1
 
-          if len(rates) == 1:
-              raise RuntimeError("No exchange rates were extracted.")
+          if len(selling)==1:
+              raise RuntimeError("No exchange rates extracted.")
 
-          data = {
-              "source": "Bank of Ghana Daily Interbank FX Rates",
-              "rate_type": "selling",
-              "source_page_date": page_date,
-              "updated_at": datetime.now(timezone.utc).isoformat(),
-              "rates": rates
+          data={
+
+              "source":"Bank of Ghana Daily Interbank FX Rates",
+
+              "source_page_date":page_date,
+
+              "updated_at":datetime.now(timezone.utc).isoformat(),
+
+              "buying":buying,
+
+              "selling":selling
+
           }
 
-          with open("rates.json", "w", encoding="utf-8") as f:
-              json.dump(data, f, indent=2)
+          with open("rates.json","w",encoding="utf-8") as f:
+              json.dump(data,f,indent=2)
+
+          print(json.dumps(data,indent=2))
+
           PY
 
-      - name: Prepare site folder
+      - name: Prepare site
         run: |
-          set -e
           rm -rf site
-          mkdir -p site
+          mkdir site
+
           cp index.html site/
           cp style.css site/
           cp script.js site/
           cp rates.json site/
-          [ -f manifest.json ] && cp manifest.json site/
-          [ -f service-worker.js ] && cp service-worker.js site/
-          [ -f boglogonew.png ] && cp boglogonew.png site/
 
-      - name: Debug site folder
-        run: |
-          echo "Root files:"
-          ls -la
-          echo ""
-          echo "Site files:"
-          ls -la site
+          if [ -f manifest.json ]; then
+            cp manifest.json site/
+          fi
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+          if [ -f service-worker.js ]; then
+            cp service-worker.js site/
+          fi
 
-      - name: Upload artifact
+          if [ -f boglogonew.png ]; then
+            cp boglogonew.png site/
+          fi
+
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./site
+          path: site
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Deploy to GitHub Pages
+
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
