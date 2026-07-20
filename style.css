@@ -13,6 +13,7 @@ body {
   box-sizing: border-box;
 }
 
+
 .container {
   min-height: 100vh;
   min-height: 100dvh;
@@ -23,11 +24,13 @@ body {
   gap: 10px;
 }
 
+
 h1 {
   font-size: 28px;
   text-align: center;
   margin: 4px 0 0;
 }
+
 
 #lastUpdated {
   text-align: center;
@@ -36,12 +39,14 @@ h1 {
   margin-bottom: 6px;
 }
 
+
 .grid {
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 100%;
 }
+
 
 .input-row {
   display: flex;
@@ -53,6 +58,7 @@ h1 {
   padding: 18px;
 }
 
+
 .currency {
   min-width: 70px;
   font-weight: 700;
@@ -60,33 +66,141 @@ h1 {
   color: #38bdf8;
 }
 
+
 input {
   flex: 1;
   min-width: 0;
+
   font-size: 48px;
   font-weight: 800;
+
   border: none;
   outline: none;
+
   background: transparent;
   color: white;
+
   text-align: right;
 }
+
 
 input::placeholder {
   color: #94a3b8;
 }
 
+
+/* REMOVE NUMBER INPUT SPINNERS */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* ============================= */
+/* BUYING / SELLING SWITCH */
+/* ============================= */
+
+.rate-switch {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 0;
+
+  margin: 6px auto;
+
+  width: fit-content;
+
+  background: #1e293b;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+}
+
+
+.rate-switch button {
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: white;
+
+  padding: 10px 28px;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+}
+
+
+.rate-switch button.active {
+
+  background: #38bdf8;
+
+  color: #0f172a;
+
+}
+
+
+.rate-switch button:active {
+
+  transform: scale(0.96);
+
+}
+
+
+
+/* MOBILE ADJUSTMENTS */
+
 @media (max-width: 480px) {
+
+
   .currency {
+
     min-width: 60px;
+
     font-size: 22px;
+
   }
+
+
 
   input {
+
     font-size: 36px;
+
   }
 
+
+
   .input-row {
+
     padding: 16px;
+
   }
+
+
+
+  .rate-switch button {
+
+    padding: 8px 20px;
+
+    font-size: 16px;
+
+  }
+
+
 }
