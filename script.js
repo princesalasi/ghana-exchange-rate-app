@@ -6,7 +6,10 @@ const inputs = ["GHS", "USD", "EUR", "GBP", "CNY", "NGN"];
 
 let isUpdating = false;
 
+
+// Default mode
 let currentRateType = "selling";
+
 
 
 async function loadRates() {
@@ -27,8 +30,9 @@ async function loadRates() {
     sellingRates = data.selling || {};
 
 
-    // Default remains SELLING (same as old app)
+    // Keep selling as default
     rates = sellingRates;
+
 
 
     const lastUpdated = document.getElementById("lastUpdated");
@@ -50,6 +54,7 @@ async function loadRates() {
     }
 
 
+
     attachInputHandlers();
 
     setupRateSwitch();
@@ -57,14 +62,15 @@ async function loadRates() {
     seedDefaultValue();
 
 
-  } catch(error) {
+
+  } catch (error) {
 
 
     const lastUpdated =
       document.getElementById("lastUpdated");
 
 
-    if(lastUpdated){
+    if (lastUpdated) {
 
       lastUpdated.textContent =
         "Unable to load exchange rates";
@@ -81,64 +87,51 @@ async function loadRates() {
 
 
 
-function setupRateSwitch(){
+
+function setupRateSwitch() {
 
 
-  const buyingBtn =
-    document.getElementById("buyingBtn");
+  const toggle =
+    document.getElementById("rateToggle");
 
 
-  const sellingBtn =
-    document.getElementById("sellingBtn");
-
-
-
-  if(!buyingBtn || !sellingBtn){
+  if (!toggle) {
     return;
   }
 
 
 
-  sellingBtn.classList.add("active");
+  // Selling is default
+  toggle.checked = true;
 
 
 
-  buyingBtn.addEventListener("click",()=>{
-
-
-    currentRateType="buying";
-
-
-    rates=buyingRates;
-
-
-    buyingBtn.classList.add("active");
-
-    sellingBtn.classList.remove("active");
-
-
-    recalculate();
-
-
-  });
+  toggle.addEventListener("change", function () {
 
 
 
-  sellingBtn.addEventListener("click",()=>{
+    if (toggle.checked) {
 
 
-    currentRateType="selling";
+      // SELLING
+      rates = sellingRates;
+      currentRateType = "selling";
 
 
-    rates=sellingRates;
+
+    } else {
 
 
-    sellingBtn.classList.add("active");
+      // BUYING
+      rates = buyingRates;
+      currentRateType = "buying";
 
-    buyingBtn.classList.remove("active");
+
+    }
 
 
-    recalculate();
+
+    recalculateCurrentValue();
 
 
   });
@@ -150,30 +143,31 @@ function setupRateSwitch(){
 
 
 
-function recalculate(){
+function recalculateCurrentValue() {
 
 
-  for(const id of inputs){
+  for (const id of inputs) {
 
 
-    const field=document.getElementById(id);
+    const field =
+      document.getElementById(id);
 
 
-    if(
+
+    if (
       field &&
       field.value !== ""
-    ){
+    ) {
 
 
-      const value=parseFloat(
-        cleanNumber(field.value)
-      );
+      const value =
+        parseFloat(cleanNumber(field.value));
 
 
-      if(!Number.isNaN(value)){
 
+      if (!Number.isNaN(value)) {
 
-        convertFrom(id,value);
+        convertFrom(id, value);
 
       }
 
@@ -185,7 +179,9 @@ function recalculate(){
   }
 
 
+
   seedDefaultValue();
+
 
 }
 
@@ -193,42 +189,43 @@ function recalculate(){
 
 
 
-function attachInputHandlers(){
+function attachInputHandlers() {
 
 
-  inputs.forEach((id)=>{
+  inputs.forEach((id) => {
 
 
-    const input=document.getElementById(id);
+    const input =
+      document.getElementById(id);
 
 
-    if(!input){
+
+    if (!input) {
       return;
     }
 
 
 
-    input.addEventListener("input",(event)=>{
+
+    input.addEventListener("input", (event) => {
 
 
-      if(isUpdating){
+      if (isUpdating) {
         return;
       }
 
 
 
-      const rawText=event.target.value;
-
-
-      const cleaned=cleanNumber(rawText);
-
-
-
-      event.target.dataset.raw=cleaned;
+      const cleaned =
+        cleanNumber(event.target.value);
 
 
 
-      if(cleaned==="" || cleaned==="."){
+      event.target.dataset.raw = cleaned;
+
+
+
+      if (cleaned === "" || cleaned === ".") {
 
 
         clearOtherInputs(id);
@@ -239,18 +236,18 @@ function attachInputHandlers(){
 
 
 
-      const value=parseFloat(cleaned);
+      const value =
+        parseFloat(cleaned);
 
 
 
-      if(Number.isNaN(value)){
+      if (Number.isNaN(value)) {
         return;
       }
 
 
 
-      convertFrom(id,value);
-
+      convertFrom(id, value);
 
 
     });
@@ -258,7 +255,8 @@ function attachInputHandlers(){
 
 
 
-    input.addEventListener("focus",()=>{
+
+    input.addEventListener("focus", () => {
 
 
       const raw =
@@ -267,7 +265,7 @@ function attachInputHandlers(){
 
 
 
-      input.value=raw;
+      input.value = raw;
 
       input.select();
 
@@ -279,21 +277,23 @@ function attachInputHandlers(){
 
 
 
-    input.addEventListener("blur",()=>{
+
+    input.addEventListener("blur", () => {
 
 
-      const raw=input.dataset.raw;
+      const raw =
+        input.dataset.raw;
 
 
 
-      if(
+      if (
         raw &&
         raw !== "." &&
         !Number.isNaN(parseFloat(raw))
-      ){
+      ) {
 
 
-        input.value=
+        input.value =
           formatNumber(parseFloat(raw));
 
 
@@ -307,20 +307,19 @@ function attachInputHandlers(){
   });
 
 
-
 }
 
 
 
 
 
-function cleanNumber(value){
+function cleanNumber(value) {
 
 
   let cleaned =
     value
-    .replace(/,/g,"")
-    .replace(/[^\d.]/g,"");
+      .replace(/,/g, "")
+      .replace(/[^\d.]/g, "");
 
 
 
@@ -328,15 +327,14 @@ function cleanNumber(value){
     cleaned.indexOf(".");
 
 
-  if(firstDot!==-1){
+  if (firstDot !== -1) {
 
 
     cleaned =
-      cleaned.slice(0,firstDot+1)
-      +
+      cleaned.slice(0, firstDot + 1) +
       cleaned
-      .slice(firstDot+1)
-      .replace(/\./g,"");
+        .slice(firstDot + 1)
+        .replace(/\./g, "");
 
 
   }
@@ -351,11 +349,11 @@ function cleanNumber(value){
 
 
 
-function roundTo2(value){
+function roundTo2(value) {
 
   return Math.round(
-    (value + Number.EPSILON)*100
-  )/100;
+    (value + Number.EPSILON) * 100
+  ) / 100;
 
 }
 
@@ -363,10 +361,10 @@ function roundTo2(value){
 
 
 
-function toGHS(currency,value){
+function toGHS(currency, value) {
 
 
-  if(currency==="GHS"){
+  if (currency === "GHS") {
     return value;
   }
 
@@ -379,10 +377,10 @@ function toGHS(currency,value){
 
 
 
-function fromGHS(currency,ghsValue){
+function fromGHS(currency, ghsValue) {
 
 
-  if(currency==="GHS"){
+  if (currency === "GHS") {
     return ghsValue;
   }
 
@@ -395,14 +393,14 @@ function fromGHS(currency,ghsValue){
 
 
 
-function formatNumber(value){
+function formatNumber(value) {
 
 
   return value.toLocaleString(
     "en-US",
     {
-      minimumFractionDigits:2,
-      maximumFractionDigits:2
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
     }
   );
 
@@ -413,29 +411,31 @@ function formatNumber(value){
 
 
 
-function convertFrom(base,value){
+function convertFrom(base, value) {
 
 
-  if(
-    base!=="GHS" &&
+  if (
+    base !== "GHS" &&
     !rates[base]
-  ){
+  ) {
+
     return;
+
   }
 
 
 
-  isUpdating=true;
+  isUpdating = true;
 
 
 
   const ghsValue =
-    toGHS(base,value);
+    toGHS(base, value);
 
 
 
 
-  inputs.forEach((currency)=>{
+  inputs.forEach((currency) => {
 
 
     const field =
@@ -443,38 +443,44 @@ function convertFrom(base,value){
 
 
 
-    if(!field){
+    if (!field) {
       return;
     }
 
 
 
-    if(
-      currency===base &&
-      document.activeElement===field
-    ){
+
+
+    if (
+      currency === base &&
+      document.activeElement === field
+    ) {
+
       return;
+
     }
+
 
 
 
 
     const converted =
-      fromGHS(currency,ghsValue);
+      fromGHS(currency, ghsValue);
 
 
 
 
-    if(!Number.isFinite(converted)){
+    if (!Number.isFinite(converted)) {
 
 
-      field.dataset.raw="";
+      field.dataset.raw = "";
 
-      field.value="";
+      field.value = "";
 
       return;
 
     }
+
 
 
 
@@ -498,7 +504,7 @@ function convertFrom(base,value){
 
 
 
-  isUpdating=false;
+  isUpdating = false;
 
 
 }
@@ -507,10 +513,10 @@ function convertFrom(base,value){
 
 
 
-function clearOtherInputs(activeId){
+function clearOtherInputs(activeId) {
 
 
-  inputs.forEach((currency)=>{
+  inputs.forEach((currency) => {
 
 
     const field =
@@ -518,22 +524,23 @@ function clearOtherInputs(activeId){
 
 
 
-    if(
+    if (
       !field ||
-      currency===activeId
-    ){
+      currency === activeId
+    ) {
+
       return;
+
     }
 
 
 
-    field.value="";
+    field.value = "";
 
-    field.dataset.raw="";
+    field.dataset.raw = "";
 
 
   });
-
 
 
 }
@@ -542,7 +549,7 @@ function clearOtherInputs(activeId){
 
 
 
-function seedDefaultValue(){
+function seedDefaultValue() {
 
 
   const ghsInput =
@@ -550,18 +557,21 @@ function seedDefaultValue(){
 
 
 
-  if(!ghsInput){
+  if (!ghsInput) {
     return;
   }
 
 
 
-  ghsInput.dataset.raw="1";
-
-  ghsInput.value=formatNumber(1);
+  ghsInput.dataset.raw = "1";
 
 
-  convertFrom("GHS",1);
+  ghsInput.value =
+    formatNumber(1);
+
+
+
+  convertFrom("GHS", 1);
 
 
 }
