@@ -18,16 +18,17 @@
     <h1>Ghana Exchange Rates</h1>
 
 
-    <!-- NEW: BUYING / SELLING SWITCH ONLY -->
+    <!-- BUYING / SELLING TOGGLE (NEW) -->
     <div class="rate-switch">
 
-      <button id="buyingBtn" type="button">
-        Buying
-      </button>
+      <span class="switch-label">Buying</span>
 
-      <button id="sellingBtn" type="button" class="active">
-        Selling
-      </button>
+      <label class="switch">
+        <input type="checkbox" id="rateToggle" checked>
+        <span class="slider"></span>
+      </label>
+
+      <span class="switch-label">Selling</span>
 
     </div>
 
