@@ -6,79 +6,66 @@
   <meta name="theme-color" content="#0f172a" />
   <meta name="apple-mobile-web-app-title" content="FX App" />
   <link rel="apple-touch-icon" href="./boglogonew.png" />
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="./manifest.json" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&family=Manrope:wght@500;600;700;800&display=swap" />
   <link rel="stylesheet" href="./style.css" />
   <title>Ghana Exchange Rates</title>
 </head>
 
 <body>
 
-  <main class="container">
+  <main class="app" id="converterScreen">
 
-    <h1>Ghana Exchange Rates</h1>
+    <header class="top">
+      <div class="top-row">
+        <h1>Ghana FX</h1>
+        <div class="segment" role="group" aria-label="Rate type">
+          <button type="button" id="buyingButton">Buying</button>
+          <button type="button" id="sellingButton">Selling</button>
+        </div>
+      </div>
+      <p id="status" class="status">Loading latest rates...</p>
+    </header>
 
+    <div class="layout">
+      <section class="rows-panel" aria-label="Currencies">
+        <div id="rows" class="rows"></div>
+        <button type="button" id="openPicker" class="add-button">Add or remove currencies</button>
+      </section>
 
-    <!-- BUYING / SELLING TOGGLE (NEW) -->
-    <div class="rate-switch">
+      <section id="keypad" class="keypad" aria-label="Calculator keypad"></section>
 
-      <span class="switch-label">Buying</span>
-
-      <label class="switch">
-        <input type="checkbox" id="rateToggle" checked>
-        <span class="slider"></span>
-      </label>
-
-      <span class="switch-label">Selling</span>
-
+      <section class="rate-table" aria-labelledby="tableTitle">
+        <h2 id="tableTitle">Bank of Ghana rates per unit, in cedis</h2>
+        <table>
+          <thead>
+            <tr><th scope="col">Currency</th><th scope="col">Buying</th><th scope="col">Selling</th></tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </section>
     </div>
 
-
-    <div id="lastUpdated">Loading latest rates...</div>
-
-
-    <section class="grid" aria-label="Currency converter">
-
-      <label class="input-row" for="GHS">
-        <span class="currency">GHS</span>
-        <input id="GHS" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off" />
-      </label>
-
-
-      <label class="input-row" for="USD">
-        <span class="currency">USD</span>
-        <input id="USD" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off" />
-      </label>
-
-
-      <label class="input-row" for="EUR">
-        <span class="currency">EUR</span>
-        <input id="EUR" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off" />
-      </label>
-
-
-      <label class="input-row" for="GBP">
-        <span class="currency">GBP</span>
-        <input id="GBP" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off" />
-      </label>
-
-
-      <label class="input-row" for="CNY">
-        <span class="currency">CNY</span>
-        <input id="CNY" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off" />
-      </label>
-
-
-      <label class="input-row" for="NGN">
-        <span class="currency">NGN</span>
-        <input id="NGN" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off" />
-      </label>
-
-
-    </section>
+    <footer id="credits" class="credits"></footer>
 
   </main>
 
+  <section class="app picker" id="pickerScreen" aria-label="Choose currencies" hidden>
+    <div class="top">
+      <div class="top-row">
+        <h1>Currencies</h1>
+        <button type="button" id="closePicker" class="done-button">Done</button>
+      </div>
+      <label class="search" for="search">Search by name or code
+        <input id="search" type="search" placeholder="Try kenya or KES" autocomplete="off" />
+      </label>
+    </div>
+    <div id="choices" class="choices"></div>
+  </section>
 
+  <script src="./calc.js" defer></script>
   <script src="./script.js" defer></script>
 
 </body>
