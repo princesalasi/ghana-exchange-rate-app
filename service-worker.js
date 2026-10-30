@@ -1,7 +1,7 @@
 // Network first, so new rates and new app versions show as soon as they deploy.
 // The cached copy is used only when the device is offline.
 
-const CACHE = "fx-app-v1";
+const CACHE = "fx-app-v2";
 
 const FILES = [
   "./",
@@ -11,7 +11,11 @@ const FILES = [
   "./script.js",
   "./rates.json",
   "./manifest.json",
-  "./icon.svg"
+  "./icon.svg",
+  "./icon-180.png",
+  "./icon-192.png",
+  "./icon-512.png",
+  "./icon-maskable-512.png"
 ];
 
 self.addEventListener("install", (event) => {
