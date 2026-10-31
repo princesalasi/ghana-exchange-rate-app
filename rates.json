@@ -424,8 +424,8 @@
    "source": "market"
   },
   "LRD": {
-   "buying": 0.06828968,
-   "selling": 0.06828968,
+   "buying": 0.06828316,
+   "selling": 0.06828316,
    "source": "market"
   },
   "LSL": {
@@ -849,5 +849,5 @@
    "source": "market"
   }
  },
- "updated_at": "2026-10-31T12:43:26+00:00"
+ "updated_at": "2026-10-31T17:48:17+00:00"
 }
