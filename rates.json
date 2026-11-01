@@ -114,8 +114,8 @@
    "source": "market"
   },
   "BTN": {
-   "buying": 0.12203754,
-   "selling": 0.12203754,
+   "buying": 0.12203158,
+   "selling": 0.12203158,
    "source": "market"
   },
   "BWP": {
@@ -184,8 +184,8 @@
    "source": "market"
   },
   "CVE": {
-   "buying": 0.11764152,
-   "selling": 0.11764152,
+   "buying": 0.11763875,
+   "selling": 0.11763875,
    "source": "market"
   },
   "CZK": {
@@ -244,8 +244,8 @@
    "source": "market"
   },
   "FKP": {
-   "buying": 15.51084984,
-   "selling": 15.51084984,
+   "buying": 15.51157163,
+   "selling": 15.51157163,
    "source": "market"
   },
   "GBP": {
@@ -314,8 +314,8 @@
    "source": "market"
   },
   "ILS": {
-   "buying": 3.71885459,
-   "selling": 3.71885459,
+   "buying": 3.71830148,
+   "selling": 3.71830148,
    "source": "market"
   },
   "IMP": {
@@ -324,13 +324,13 @@
    "source": "market"
   },
   "INR": {
-   "buying": 0.12203754,
-   "selling": 0.12203754,
+   "buying": 0.12203158,
+   "selling": 0.12203158,
    "source": "market"
   },
   "IQD": {
-   "buying": 0.00766754,
-   "selling": 0.00766754,
+   "buying": 0.00766989,
+   "selling": 0.00766989,
    "source": "market"
   },
   "IRR": {
@@ -459,8 +459,8 @@
    "source": "market"
   },
   "MKD": {
-   "buying": 0.21054848,
-   "selling": 0.21054848,
+   "buying": 0.21046871,
+   "selling": 0.21046871,
    "source": "market"
   },
   "MMK": {
@@ -639,8 +639,8 @@
    "source": "market"
   },
   "SHP": {
-   "buying": 15.51084984,
-   "selling": 15.51084984,
+   "buying": 15.51157163,
+   "selling": 15.51157163,
    "source": "market"
   },
   "SLE": {
@@ -774,8 +774,8 @@
    "source": "market"
   },
   "XAF": {
-   "buying": 0.01976753,
-   "selling": 0.01976753,
+   "buying": 0.01976714,
+   "selling": 0.01976714,
    "source": "market"
   },
   "XAG": {
@@ -799,8 +799,8 @@
    "source": "market"
   },
   "XDR": {
-   "buying": 15.71536334,
-   "selling": 15.71536334,
+   "buying": 15.71511637,
+   "selling": 15.71511637,
    "source": "market"
   },
   "XOF": {
@@ -849,5 +849,5 @@
    "source": "market"
   }
  },
- "updated_at": "2026-11-01T07:40:28+00:00"
+ "updated_at": "2026-11-01T15:15:52+00:00"
 }
