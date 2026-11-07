@@ -94,8 +94,8 @@
    "source": "market"
   },
   "BAM": {
-   "buying": 6.71005838,
-   "selling": 6.71005838,
+   "buying": 6.70960816,
+   "selling": 6.70960816,
    "source": "market"
   },
   "BBD": {
@@ -239,8 +239,8 @@
    "source": "market"
   },
   "CZK": {
-   "buying": 0.5387931,
-   "selling": 0.5387931,
+   "buying": 0.53867701,
+   "selling": 0.53867701,
    "source": "market"
   },
   "DJF": {
@@ -329,8 +329,8 @@
    "source": "market"
   },
   "GGP": {
-   "buying": 15.72277601,
-   "selling": 15.72277601,
+   "buying": 15.72178725,
+   "selling": 15.72178725,
    "source": "market"
   },
   "GIP": {
@@ -379,8 +379,8 @@
    "source": "market"
   },
   "HUF": {
-   "buying": 0.03600619,
-   "selling": 0.03600619,
+   "buying": 0.03599842,
+   "selling": 0.03599842,
    "source": "market"
   },
   "ICP": {
@@ -399,8 +399,8 @@
    "source": "market"
   },
   "IMP": {
-   "buying": 15.72277601,
-   "selling": 15.72277601,
+   "buying": 15.72178725,
+   "selling": 15.72178725,
    "source": "market"
   },
   "INR": {
@@ -424,8 +424,8 @@
    "source": "market"
   },
   "JEP": {
-   "buying": 15.72277601,
-   "selling": 15.72277601,
+   "buying": 15.72178725,
+   "selling": 15.72178725,
    "source": "market"
   },
   "JMD": {
@@ -509,8 +509,8 @@
    "source": "market"
   },
   "LRD": {
-   "buying": 0.06866387,
-   "selling": 0.06866387,
+   "buying": 0.06866764,
+   "selling": 0.06866764,
    "source": "market"
   },
   "LSL": {
@@ -674,8 +674,8 @@
    "source": "market"
   },
   "PLN": {
-   "buying": 2.98124795,
-   "selling": 2.98124795,
+   "buying": 2.98071478,
+   "selling": 2.98071478,
    "source": "market"
   },
   "POL": {
@@ -999,5 +999,5 @@
    "source": "market"
   }
  },
- "updated_at": "2026-11-07T10:23:46+00:00"
+ "updated_at": "2026-11-07T16:53:07+00:00"
 }
