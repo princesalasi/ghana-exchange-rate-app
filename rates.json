@@ -269,8 +269,8 @@
    "source": "market"
   },
   "EGP": {
-   "buying": 0.21614611,
-   "selling": 0.21614611,
+   "buying": 0.21623492,
+   "selling": 0.21623492,
    "source": "market"
   },
   "ENA": {
@@ -364,8 +364,8 @@
    "source": "market"
   },
   "HKD": {
-   "buying": 1.49133534,
-   "selling": 1.49133534,
+   "buying": 1.4913131,
+   "selling": 1.4913131,
    "source": "market"
   },
   "HNL": {
@@ -389,8 +389,8 @@
    "source": "market"
   },
   "IDR": {
-   "buying": 0.00064661,
-   "selling": 0.00064661,
+   "buying": 0.00064662,
+   "selling": 0.00064662,
    "source": "market"
   },
   "ILS": {
@@ -404,8 +404,8 @@
    "source": "market"
   },
   "INR": {
-   "buying": 0.12431317,
-   "selling": 0.12431317,
+   "buying": 0.12432399,
+   "selling": 0.12432399,
    "source": "market"
   },
   "IQD": {
@@ -484,8 +484,8 @@
    "source": "market"
   },
   "KZT": {
-   "buying": 0.02595582,
-   "selling": 0.02595582,
+   "buying": 0.02596121,
+   "selling": 0.02596121,
    "source": "market"
   },
   "LAK": {
@@ -559,8 +559,8 @@
    "source": "market"
   },
   "MNT": {
-   "buying": 0.00324412,
-   "selling": 0.00324412,
+   "buying": 0.00324475,
+   "selling": 0.00324475,
    "source": "market"
   },
   "MOP": {
@@ -629,8 +629,8 @@
    "source": "bog"
   },
   "NPR": {
-   "buying": 0.07753681,
-   "selling": 0.07753681,
+   "buying": 0.0775741,
+   "selling": 0.0775741,
    "source": "market"
   },
   "NZD": {
@@ -704,8 +704,8 @@
    "source": "market"
   },
   "RUB": {
-   "buying": 0.14306356,
-   "selling": 0.14306356,
+   "buying": 0.14307175,
+   "selling": 0.14307175,
    "source": "market"
   },
   "RWF": {
@@ -804,8 +804,8 @@
    "source": "market"
   },
   "THB": {
-   "buying": 0.34932057,
-   "selling": 0.34932057,
+   "buying": 0.34933277,
+   "selling": 0.34933277,
    "source": "market"
   },
   "TJS": {
@@ -829,8 +829,8 @@
    "source": "market"
   },
   "TRY": {
-   "buying": 0.23357937,
-   "selling": 0.23357937,
+   "buying": 0.23357391,
+   "selling": 0.23357391,
    "source": "market"
   },
   "TTD": {
@@ -839,8 +839,8 @@
    "source": "market"
   },
   "TWD": {
-   "buying": 0.35570732,
-   "selling": 0.35570732,
+   "buying": 0.35564407,
+   "selling": 0.35564407,
    "source": "market"
   },
   "TZS": {
@@ -894,8 +894,8 @@
    "source": "market"
   },
   "VND": {
-   "buying": 0.00045618,
-   "selling": 0.00045618,
+   "buying": 0.00045626,
+   "selling": 0.00045626,
    "source": "market"
   },
   "VUV": {
@@ -999,5 +999,5 @@
    "source": "market"
   }
  },
- "updated_at": "2026-11-07T16:53:07+00:00"
+ "updated_at": "2026-11-08T00:44:30+00:00"
 }
