@@ -94,8 +94,8 @@
    "source": "market"
   },
   "BAM": {
-   "buying": 6.70690812,
-   "selling": 6.70690812,
+   "buying": 6.70645832,
+   "selling": 6.70645832,
    "source": "market"
   },
   "BBD": {
@@ -234,8 +234,8 @@
    "source": "market"
   },
   "CVE": {
-   "buying": 0.11896689,
-   "selling": 0.11896689,
+   "buying": 0.11895699,
+   "selling": 0.11895699,
    "source": "market"
   },
   "CZK": {
@@ -269,8 +269,8 @@
    "source": "market"
   },
   "EGP": {
-   "buying": 0.21657679,
-   "selling": 0.21657679,
+   "buying": 0.21651583,
+   "selling": 0.21651583,
    "source": "market"
   },
   "ENA": {
@@ -329,8 +329,8 @@
    "source": "market"
   },
   "GGP": {
-   "buying": 15.71684531,
-   "selling": 15.71684531,
+   "buying": 15.71511637,
+   "selling": 15.71511637,
    "source": "market"
   },
   "GIP": {
@@ -399,8 +399,8 @@
    "source": "market"
   },
   "IMP": {
-   "buying": 15.71684531,
-   "selling": 15.71684531,
+   "buying": 15.71511637,
+   "selling": 15.71511637,
    "source": "market"
   },
   "INR": {
@@ -424,8 +424,8 @@
    "source": "market"
   },
   "JEP": {
-   "buying": 15.71684531,
-   "selling": 15.71684531,
+   "buying": 15.71511637,
+   "selling": 15.71511637,
    "source": "market"
   },
   "JMD": {
@@ -474,8 +474,8 @@
    "source": "market"
   },
   "KWD": {
-   "buying": 37.84724851,
-   "selling": 37.84724851,
+   "buying": 37.84581615,
+   "selling": 37.84581615,
    "source": "market"
   },
   "KYD": {
@@ -549,8 +549,8 @@
    "source": "market"
   },
   "MKD": {
-   "buying": 0.21286107,
-   "selling": 0.21286107,
+   "buying": 0.21287466,
+   "selling": 0.21287466,
    "source": "market"
   },
   "MMK": {
@@ -999,5 +999,5 @@
    "source": "market"
   }
  },
- "updated_at": "2026-11-08T07:27:31+00:00"
+ "updated_at": "2026-11-08T15:19:54+00:00"
 }
