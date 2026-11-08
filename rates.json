@@ -204,8 +204,8 @@
    "source": "market"
   },
   "CNH": {
-   "buying": 1.75641971,
-   "selling": 1.75641971,
+   "buying": 1.75638886,
+   "selling": 1.75638886,
    "source": "market"
   },
   "CNY": {
@@ -309,8 +309,8 @@
    "source": "market"
   },
   "FJD": {
-   "buying": 5.19183843,
-   "selling": 5.19183843,
+   "buying": 5.18699103,
+   "selling": 5.18699103,
    "source": "market"
   },
   "FKP": {
@@ -329,8 +329,8 @@
    "source": "market"
   },
   "GGP": {
-   "buying": 15.71511637,
-   "selling": 15.71511637,
+   "buying": 15.71388164,
+   "selling": 15.71388164,
    "source": "market"
   },
   "GIP": {
@@ -399,8 +399,8 @@
    "source": "market"
   },
   "IMP": {
-   "buying": 15.71511637,
-   "selling": 15.71511637,
+   "buying": 15.71388164,
+   "selling": 15.71388164,
    "source": "market"
   },
   "INR": {
@@ -424,8 +424,8 @@
    "source": "market"
   },
   "JEP": {
-   "buying": 15.71511637,
-   "selling": 15.71511637,
+   "buying": 15.71388164,
+   "selling": 15.71388164,
    "source": "market"
   },
   "JMD": {
@@ -904,8 +904,8 @@
    "source": "market"
   },
   "WST": {
-   "buying": 4.25731193,
-   "selling": 4.25731193,
+   "buying": 4.25332823,
+   "selling": 4.25332823,
    "source": "market"
   },
   "XAF": {
@@ -999,5 +999,5 @@
    "source": "market"
   }
  },
- "updated_at": "2026-11-08T15:19:54+00:00"
+ "updated_at": "2026-11-08T20:32:49+00:00"
 }
