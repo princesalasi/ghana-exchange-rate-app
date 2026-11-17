@@ -1,71 +1,71 @@
 {
  "bog_date": "2026-11-16",
- "market_date": "2026-11-15",
+ "market_date": "2026-11-16",
  "market_source": "frankfurter",
  "rates": {
   "AAVE": {
-   "buying": 1280.55729854,
-   "selling": 1280.55729854,
+   "buying": 1267.44318686,
+   "selling": 1267.44318686,
    "source": "market"
   },
   "ADA": {
-   "buying": 1.81775217,
-   "selling": 1.81775217,
+   "buying": 1.78961309,
+   "selling": 1.78961309,
    "source": "market"
   },
   "AED": {
-   "buying": 3.1940718,
-   "selling": 3.1940718,
+   "buying": 3.19294997,
+   "selling": 3.19294997,
    "source": "market"
   },
   "AFN": {
-   "buying": 0.17903821,
-   "selling": 0.17903821,
+   "buying": 0.17899655,
+   "selling": 0.17899655,
    "source": "market"
   },
   "ALGO": {
-   "buying": 0.93729497,
-   "selling": 0.93729497,
+   "buying": 0.93075205,
+   "selling": 0.93075205,
    "source": "market"
   },
   "ALL": {
-   "buying": 0.14269814,
-   "selling": 0.14269814,
+   "buying": 0.14265742,
+   "selling": 0.14265742,
    "source": "market"
   },
   "AMD": {
-   "buying": 0.0325595,
-   "selling": 0.0325595,
+   "buying": 0.0325489,
+   "selling": 0.0325489,
    "source": "market"
   },
   "ANG": {
-   "buying": 6.55307995,
-   "selling": 6.55307995,
+   "buying": 6.55093351,
+   "selling": 6.55093351,
    "source": "market"
   },
   "AOA": {
-   "buying": 0.01276748,
-   "selling": 0.01276748,
+   "buying": 0.01276324,
+   "selling": 0.01276324,
    "source": "market"
   },
   "APT": {
-   "buying": 5.35561268,
-   "selling": 5.35561268,
+   "buying": 5.30335172,
+   "selling": 5.30335172,
    "source": "market"
   },
   "ARB": {
-   "buying": 1.57878118,
-   "selling": 1.57878118,
+   "buying": 1.53275497,
+   "selling": 1.53275497,
    "source": "market"
   },
   "ARS": {
-   "buying": 0.00758668,
-   "selling": 0.00758668,
+   "buying": 0.00758553,
+   "selling": 0.00758553,
    "source": "market"
   },
   "ATOM": {
-   "buying": 15.3609831,
-   "selling": 15.3609831,
+   "buying": 15.59016572,
+   "selling": 15.59016572,
    "source": "market"
   },
   "AUD": {
@@ -74,103 +74,103 @@
    "source": "bog"
   },
   "AVAX": {
-   "buying": 85.4189801,
-   "selling": 85.4189801,
+   "buying": 83.18083514,
+   "selling": 83.18083514,
    "source": "market"
   },
   "AWG": {
-   "buying": 6.5368022,
-   "selling": 6.5368022,
+   "buying": 6.53423941,
+   "selling": 6.53423941,
    "source": "market"
   },
   "AXS": {
-   "buying": 8.08538163,
-   "selling": 8.08538163,
+   "buying": 7.9057633,
+   "selling": 7.9057633,
    "source": "market"
   },
   "AZN": {
-   "buying": 6.89893067,
-   "selling": 6.89893067,
+   "buying": 6.89655172,
+   "selling": 6.89655172,
    "source": "market"
   },
   "BAM": {
-   "buying": 6.62163952,
-   "selling": 6.62163952,
+   "buying": 6.61594443,
+   "selling": 6.61594443,
    "source": "market"
   },
   "BBD": {
-   "buying": 5.77734127,
-   "selling": 5.77734127,
+   "buying": 5.77567287,
+   "selling": 5.77567287,
    "source": "market"
   },
   "BCH": {
-   "buying": 2517.94032481,
-   "selling": 2517.94032481,
+   "buying": 2510.41823568,
+   "selling": 2510.41823568,
    "source": "market"
   },
   "BDT": {
-   "buying": 0.09400793,
-   "selling": 0.09400793,
+   "buying": 0.094015,
+   "selling": 0.094015,
    "source": "market"
   },
   "BHD": {
-   "buying": 31.19735446,
-   "selling": 31.19735446,
+   "buying": 31.18665211,
+   "selling": 31.18665211,
    "source": "market"
   },
   "BIF": {
-   "buying": 0.00388742,
-   "selling": 0.00388742,
+   "buying": 0.00388606,
+   "selling": 0.00388606,
    "source": "market"
   },
   "BMD": {
-   "buying": 11.73006768,
-   "selling": 11.73006768,
+   "buying": 11.7260788,
+   "selling": 11.7260788,
    "source": "market"
   },
   "BND": {
-   "buying": 9.10829766,
-   "selling": 9.10829766,
+   "buying": 9.10415149,
+   "selling": 9.10415149,
    "source": "market"
   },
   "BOB": {
-   "buying": 1.00458089,
-   "selling": 1.00458089,
+   "buying": 1.00423788,
+   "selling": 1.00423788,
    "source": "market"
   },
   "BRL": {
-   "buying": 2.06868018,
-   "selling": 2.06868018,
+   "buying": 2.0644522,
+   "selling": 2.0644522,
    "source": "market"
   },
   "BSD": {
-   "buying": 11.60065892,
-   "selling": 11.60065892,
+   "buying": 11.59662306,
+   "selling": 11.59662306,
    "source": "market"
   },
   "BTC": {
-   "buying": 778270.68254339,
-   "selling": 778270.68254339,
+   "buying": 777302.7594248,
+   "selling": 777302.7594248,
    "source": "market"
   },
   "BTN": {
-   "buying": 0.12471938,
-   "selling": 0.12471938,
+   "buying": 0.12468051,
+   "selling": 0.12468051,
    "source": "market"
   },
   "BWP": {
-   "buying": 0.85711837,
-   "selling": 0.85711837,
+   "buying": 0.85682461,
+   "selling": 0.85682461,
    "source": "market"
   },
   "BYN": {
-   "buying": 3.91083301,
-   "selling": 3.91083301,
+   "buying": 3.90945698,
+   "selling": 3.90945698,
    "source": "market"
   },
   "BZD": {
-   "buying": 5.76767793,
-   "selling": 5.76767793,
+   "buying": 5.76568266,
+   "selling": 5.76568266,
    "source": "market"
   },
   "CAD": {
@@ -179,8 +179,8 @@
    "source": "bog"
   },
   "CDF": {
-   "buying": 0.00511143,
-   "selling": 0.00511143,
+   "buying": 0.00510986,
+   "selling": 0.00510986,
    "source": "market"
   },
   "CHF": {
@@ -189,23 +189,23 @@
    "source": "bog"
   },
   "CHZ": {
-   "buying": 0.11510394,
-   "selling": 0.11510394,
+   "buying": 0.11411617,
+   "selling": 0.11411617,
    "source": "market"
   },
   "CLP": {
-   "buying": 0.01176471,
-   "selling": 0.01176471,
+   "buying": 0.01175364,
+   "selling": 0.01175364,
    "source": "market"
   },
   "CMD": {
-   "buying": 11.73006768,
-   "selling": 11.73006768,
+   "buying": 11.7260788,
+   "selling": 11.7260788,
    "source": "market"
   },
   "CNH": {
-   "buying": 1.75901495,
-   "selling": 1.75901495,
+   "buying": 1.75913873,
+   "selling": 1.75913873,
    "source": "market"
   },
   "CNY": {
@@ -214,38 +214,38 @@
    "source": "bog"
   },
   "COP": {
-   "buying": 0.00353407,
-   "selling": 0.00353407,
+   "buying": 0.00352958,
+   "selling": 0.00352958,
    "source": "market"
   },
   "CRC": {
-   "buying": 0.02627499,
-   "selling": 0.02627499,
+   "buying": 0.02626602,
+   "selling": 0.02626602,
    "source": "market"
   },
   "CRV": {
-   "buying": 2.41481732,
-   "selling": 2.41481732,
+   "buying": 2.40934827,
+   "selling": 2.40934827,
    "source": "market"
   },
   "CUP": {
-   "buying": 0.48875855,
-   "selling": 0.48875855,
+   "buying": 0.48859139,
+   "selling": 0.48859139,
    "source": "market"
   },
   "CVE": {
-   "buying": 0.11744809,
-   "selling": 0.11744809,
+   "buying": 0.11739845,
+   "selling": 0.11739845,
    "source": "market"
   },
   "CZK": {
-   "buying": 0.53008216,
-   "selling": 0.53008216,
+   "buying": 0.52960491,
+   "selling": 0.52960491,
    "source": "market"
   },
   "DJF": {
-   "buying": 0.06600878,
-   "selling": 0.06600878,
+   "buying": 0.06600529,
+   "selling": 0.06600529,
    "source": "market"
   },
   "DKK": {
@@ -254,48 +254,48 @@
    "source": "bog"
   },
   "DOP": {
-   "buying": 0.1912375,
-   "selling": 0.1912375,
+   "buying": 0.19117169,
+   "selling": 0.19117169,
    "source": "market"
   },
   "DOT": {
-   "buying": 8.62663906,
-   "selling": 8.62663906,
+   "buying": 8.55431993,
+   "selling": 8.55431993,
    "source": "market"
   },
   "DZD": {
-   "buying": 0.08558054,
-   "selling": 0.08558054,
+   "buying": 0.08557614,
+   "selling": 0.08557614,
    "source": "market"
   },
   "EGP": {
-   "buying": 0.21883754,
-   "selling": 0.21883754,
+   "buying": 0.2186079,
+   "selling": 0.2186079,
    "source": "market"
   },
   "ENA": {
-   "buying": 1.41530797,
-   "selling": 1.41530797,
+   "buying": 1.34168757,
+   "selling": 1.34168757,
    "source": "market"
   },
   "ERN": {
-   "buying": 0.76911244,
-   "selling": 0.76911244,
+   "buying": 0.7688759,
+   "selling": 0.7688759,
    "source": "market"
   },
   "ETB": {
-   "buying": 0.07242336,
-   "selling": 0.07242336,
+   "buying": 0.07239924,
+   "selling": 0.07239924,
    "source": "market"
   },
   "ETC": {
-   "buying": 70.54176072,
-   "selling": 70.54176072,
+   "buying": 68.74269609,
+   "selling": 68.74269609,
    "source": "market"
   },
   "ETH": {
-   "buying": 21815.48463099,
-   "selling": 21815.48463099,
+   "buying": 21769.89223903,
+   "selling": 21769.89223903,
    "source": "market"
   },
   "EUR": {
@@ -304,18 +304,18 @@
    "source": "bog"
   },
   "FIL": {
-   "buying": 7.17205766,
-   "selling": 7.17205766,
+   "buying": 7.08717222,
+   "selling": 7.08717222,
    "source": "market"
   },
   "FJD": {
-   "buying": 5.1607576,
-   "selling": 5.1607576,
+   "buying": 5.15012618,
+   "selling": 5.15012618,
    "source": "market"
   },
   "FKP": {
-   "buying": 15.51470018,
-   "selling": 15.51470018,
+   "buying": 15.50868486,
+   "selling": 15.50868486,
    "source": "market"
   },
   "GBP": {
@@ -324,18 +324,18 @@
    "source": "bog"
   },
   "GEL": {
-   "buying": 4.5255012,
-   "selling": 4.5255012,
+   "buying": 4.52406804,
+   "selling": 4.52406804,
    "source": "market"
   },
   "GGP": {
-   "buying": 15.51470018,
-   "selling": 15.51470018,
+   "buying": 15.50435672,
+   "selling": 15.50435672,
    "source": "market"
   },
   "GIP": {
-   "buying": 15.28561165,
-   "selling": 15.28561165,
+   "buying": 15.28047308,
+   "selling": 15.28047308,
    "source": "market"
   },
   "GMD": {
@@ -344,73 +344,73 @@
    "source": "bog"
   },
   "GNF": {
-   "buying": 0.00132139,
-   "selling": 0.00132139,
+   "buying": 0.00132182,
+   "selling": 0.00132182,
    "source": "market"
   },
   "GTQ": {
-   "buying": 1.53071377,
-   "selling": 1.53071377,
+   "buying": 1.53019847,
+   "selling": 1.53019847,
    "source": "market"
   },
   "GYD": {
-   "buying": 0.05527274,
-   "selling": 0.05527274,
+   "buying": 0.05525381,
+   "selling": 0.05525381,
    "source": "market"
   },
   "HBAR": {
-   "buying": 0.69405886,
-   "selling": 0.69405886,
+   "buying": 0.67150148,
+   "selling": 0.67150148,
    "source": "market"
   },
   "HKD": {
-   "buying": 1.4939867,
-   "selling": 1.4939867,
+   "buying": 1.49338431,
+   "selling": 1.49338431,
    "source": "market"
   },
   "HNL": {
-   "buying": 0.43480151,
-   "selling": 0.43480151,
+   "buying": 0.43466922,
+   "selling": 0.43466922,
    "source": "market"
   },
   "HTG": {
-   "buying": 0.08936071,
-   "selling": 0.08936071,
+   "buying": 0.08933038,
+   "selling": 0.08933038,
    "source": "market"
   },
   "HUF": {
-   "buying": 0.03544968,
-   "selling": 0.03544968,
+   "buying": 0.03542958,
+   "selling": 0.03542958,
    "source": "market"
   },
   "ICP": {
-   "buying": 26.14857621,
-   "selling": 26.14857621,
+   "buying": 29.0393774,
+   "selling": 29.0393774,
    "source": "market"
   },
   "IDR": {
-   "buying": 0.00064334,
-   "selling": 0.00064334,
+   "buying": 0.00064299,
+   "selling": 0.00064299,
    "source": "market"
   },
   "ILS": {
-   "buying": 3.64817044,
-   "selling": 3.64817044,
+   "buying": 3.64604222,
+   "selling": 3.64604222,
    "source": "market"
   },
   "IMP": {
-   "buying": 15.51470018,
-   "selling": 15.51470018,
+   "buying": 15.50435672,
+   "selling": 15.50435672,
    "source": "market"
   },
   "INR": {
-   "buying": 0.12471938,
-   "selling": 0.12471938,
+   "buying": 0.12471783,
+   "selling": 0.12471783,
    "source": "market"
   },
   "IQD": {
-   "buying": 0.00773694,
-   "selling": 0.00773694,
+   "buying": 0.00773455,
+   "selling": 0.00773455,
    "source": "market"
   },
   "IRR": {
@@ -419,23 +419,23 @@
    "source": "market"
   },
   "ISK": {
-   "buying": 0.09469428,
-   "selling": 0.09469428,
+   "buying": 0.09463155,
+   "selling": 0.09463155,
    "source": "market"
   },
   "JEP": {
-   "buying": 15.51470018,
-   "selling": 15.51470018,
+   "buying": 15.50435672,
+   "selling": 15.50435672,
    "source": "market"
   },
   "JMD": {
-   "buying": 0.07412404,
-   "selling": 0.07412404,
+   "buying": 0.07409877,
+   "selling": 0.07409877,
    "source": "market"
   },
   "JOD": {
-   "buying": 16.54451301,
-   "selling": 16.54451301,
+   "buying": 16.5390404,
+   "selling": 16.5390404,
    "source": "market"
   },
   "JPY": {
@@ -444,173 +444,173 @@
    "source": "bog"
   },
   "KES": {
-   "buying": 0.09027634,
-   "selling": 0.09027634,
+   "buying": 0.09025841,
+   "selling": 0.09025841,
    "source": "market"
   },
   "KGS": {
-   "buying": 0.13404107,
-   "selling": 0.13404107,
+   "buying": 0.13399617,
+   "selling": 0.13399617,
    "source": "market"
   },
   "KHR": {
-   "buying": 0.00287167,
-   "selling": 0.00287167,
+   "buying": 0.00287018,
+   "selling": 0.00287018,
    "source": "market"
   },
   "KMF": {
-   "buying": 0.02624328,
-   "selling": 0.02624328,
+   "buying": 0.02623432,
+   "selling": 0.02623432,
    "source": "market"
   },
   "KPW": {
-   "buying": 0.09022421,
-   "selling": 0.09022421,
+   "buying": 0.09019328,
+   "selling": 0.09019328,
    "source": "market"
   },
   "KRW": {
-   "buying": 0.0087804,
-   "selling": 0.0087804,
+   "buying": 0.00877347,
+   "selling": 0.00877347,
    "source": "market"
   },
   "KWD": {
-   "buying": 37.84724851,
-   "selling": 37.84724851,
+   "buying": 37.83579266,
+   "selling": 37.83579266,
    "source": "market"
   },
   "KYD": {
-   "buying": 14.01148942,
-   "selling": 14.01148942,
+   "buying": 14.00658309,
+   "selling": 14.00658309,
    "source": "market"
   },
   "KZT": {
-   "buying": 0.02635463,
-   "selling": 0.02635463,
+   "buying": 0.0263456,
+   "selling": 0.0263456,
    "source": "market"
   },
   "LAK": {
-   "buying": 0.00052306,
-   "selling": 0.00052306,
+   "buying": 0.00052299,
+   "selling": 0.00052299,
    "source": "market"
   },
   "LBP": {
-   "buying": 0.00012962,
-   "selling": 0.00012962,
+   "buying": 0.00012947,
+   "selling": 0.00012947,
    "source": "market"
   },
   "LINK": {
-   "buying": 108.79972147,
-   "selling": 108.79972147,
+   "buying": 106.8672922,
+   "selling": 106.8672922,
    "source": "market"
   },
   "LKR": {
-   "buying": 0.03526839,
-   "selling": 0.03526839,
+   "buying": 0.0352572,
+   "selling": 0.0352572,
    "source": "market"
   },
   "LRD": {
-   "buying": 0.06926263,
-   "selling": 0.06926263,
+   "buying": 0.06923913,
+   "selling": 0.06923913,
    "source": "market"
   },
   "LSL": {
-   "buying": 0.69261671,
-   "selling": 0.69261671,
+   "buying": 0.69237693,
+   "selling": 0.69237693,
    "source": "market"
   },
   "LTC": {
-   "buying": 547.07587942,
-   "selling": 547.07587942,
+   "buying": 542.65248535,
+   "selling": 542.65248535,
    "source": "market"
   },
   "LYD": {
-   "buying": 1.81755394,
-   "selling": 1.81755394,
+   "buying": 1.81768609,
+   "selling": 1.81768609,
    "source": "market"
   },
   "MAD": {
-   "buying": 1.17835596,
-   "selling": 1.17835596,
+   "buying": 1.17726004,
+   "selling": 1.17726004,
    "source": "market"
   },
   "MANA": {
-   "buying": 0.72108451,
-   "selling": 0.72108451,
+   "buying": 0.71194646,
+   "selling": 0.71194646,
    "source": "market"
   },
   "MDL": {
-   "buying": 0.64570285,
-   "selling": 0.64570285,
+   "buying": 0.64549445,
+   "selling": 0.64549445,
    "source": "market"
   },
   "MGA": {
-   "buying": 0.00256272,
-   "selling": 0.00256272,
+   "buying": 0.00256865,
+   "selling": 0.00256865,
    "source": "market"
   },
   "MKD": {
-   "buying": 0.21011052,
-   "selling": 0.21011052,
+   "buying": 0.21003991,
+   "selling": 0.21003991,
    "source": "market"
   },
   "MMK": {
-   "buying": 0.00558597,
-   "selling": 0.00558597,
+   "buying": 0.00558441,
+   "selling": 0.00558441,
    "source": "market"
   },
   "MNT": {
-   "buying": 0.00325256,
-   "selling": 0.00325256,
+   "buying": 0.0032515,
+   "selling": 0.0032515,
    "source": "market"
   },
   "MOP": {
-   "buying": 1.45047358,
-   "selling": 1.45047358,
+   "buying": 1.44988473,
+   "selling": 1.44988473,
    "source": "market"
   },
   "MRU": {
-   "buying": 0.2891009,
-   "selling": 0.2891009,
+   "buying": 0.28900064,
+   "selling": 0.28900064,
    "source": "market"
   },
   "MUR": {
-   "buying": 0.24542889,
-   "selling": 0.24542889,
+   "buying": 0.24511005,
+   "selling": 0.24511005,
    "source": "market"
   },
   "MVR": {
-   "buying": 0.75901328,
-   "selling": 0.75901328,
+   "buying": 0.75912852,
+   "selling": 0.75912852,
    "source": "market"
   },
   "MWK": {
-   "buying": 0.00675904,
-   "selling": 0.00675904,
+   "buying": 0.00675676,
+   "selling": 0.00675676,
    "source": "market"
   },
   "MXN": {
-   "buying": 0.63159224,
-   "selling": 0.63159224,
+   "buying": 0.63127328,
+   "selling": 0.63127328,
    "source": "market"
   },
   "MYR": {
-   "buying": 2.86902883,
-   "selling": 2.86902883,
+   "buying": 2.86697248,
+   "selling": 2.86697248,
    "source": "market"
   },
   "MZN": {
-   "buying": 0.18411798,
-   "selling": 0.18411798,
+   "buying": 0.18405698,
+   "selling": 0.18405698,
    "source": "market"
   },
   "NAD": {
-   "buying": 0.69454091,
-   "selling": 0.69454091,
+   "buying": 0.6942998,
+   "selling": 0.6942998,
    "source": "market"
   },
   "NEAR": {
-   "buying": 37.59115856,
-   "selling": 37.59115856,
+   "buying": 36.9972992,
+   "selling": 36.9972992,
    "source": "market"
   },
   "NGN": {
@@ -619,8 +619,8 @@
    "source": "bog"
   },
   "NIO": {
-   "buying": 0.32028698,
-   "selling": 0.32028698,
+   "buying": 0.32017417,
+   "selling": 0.32017417,
    "source": "market"
   },
   "NOK": {
@@ -629,8 +629,8 @@
    "source": "bog"
   },
   "NPR": {
-   "buying": 0.07783979,
-   "selling": 0.07783979,
+   "buying": 0.07785312,
+   "selling": 0.07785312,
    "source": "market"
   },
   "NZD": {
@@ -639,98 +639,98 @@
    "source": "bog"
   },
   "OMR": {
-   "buying": 30.50733701,
-   "selling": 30.50733701,
+   "buying": 30.49710278,
+   "selling": 30.49710278,
    "source": "market"
   },
   "ONDO": {
-   "buying": 3.64790428,
-   "selling": 3.64790428,
+   "buying": 3.58924662,
+   "selling": 3.58924662,
    "source": "market"
   },
   "PAB": {
-   "buying": 11.7028871,
-   "selling": 11.7028871,
+   "buying": 11.69891668,
+   "selling": 11.69891668,
    "source": "market"
   },
   "PEN": {
-   "buying": 3.44317047,
-   "selling": 3.44317047,
+   "buying": 3.44198534,
+   "selling": 3.44198534,
    "source": "market"
   },
   "PGK": {
-   "buying": 2.58899676,
-   "selling": 2.58899676,
+   "buying": 2.58792474,
+   "selling": 2.58792474,
    "source": "market"
   },
   "PHP": {
-   "buying": 0.18374247,
-   "selling": 0.18374247,
+   "buying": 0.18352665,
+   "selling": 0.18352665,
    "source": "market"
   },
   "PKR": {
-   "buying": 0.04234776,
-   "selling": 0.04234776,
+   "buying": 0.0423388,
+   "selling": 0.0423388,
    "source": "market"
   },
   "PLN": {
-   "buying": 2.93642637,
-   "selling": 2.93642637,
+   "buying": 2.93478899,
+   "selling": 2.93478899,
    "source": "market"
   },
   "POL": {
-   "buying": 0.95120327,
-   "selling": 0.95120327,
+   "buying": 0.9273857,
+   "selling": 0.9273857,
    "source": "market"
   },
   "PYG": {
-   "buying": 0.00188786,
-   "selling": 0.00188786,
+   "buying": 0.00188722,
+   "selling": 0.00188722,
    "source": "market"
   },
   "QAR": {
-   "buying": 3.22258387,
-   "selling": 3.22258387,
+   "buying": 3.22144192,
+   "selling": 3.22144192,
    "source": "market"
   },
   "RON": {
-   "buying": 2.41937435,
-   "selling": 2.41937435,
+   "buying": 2.41779497,
+   "selling": 2.41779497,
    "source": "market"
   },
   "RSD": {
-   "buying": 0.11005701,
-   "selling": 0.11005701,
+   "buying": 0.10995657,
+   "selling": 0.10995657,
    "source": "market"
   },
   "RUB": {
-   "buying": 0.14224144,
-   "selling": 0.14224144,
+   "buying": 0.14218886,
+   "selling": 0.14218886,
    "source": "market"
   },
   "RWF": {
-   "buying": 0.00793777,
-   "selling": 0.00793777,
+   "buying": 0.00793462,
+   "selling": 0.00793462,
    "source": "market"
   },
   "SAR": {
-   "buying": 3.12803028,
-   "selling": 3.12803028,
+   "buying": 3.12695435,
+   "selling": 3.12695435,
    "source": "market"
   },
   "SBD": {
-   "buying": 1.453425,
-   "selling": 1.453425,
+   "buying": 1.45325602,
+   "selling": 1.45325602,
    "source": "market"
   },
   "SCR": {
-   "buying": 0.81142486,
-   "selling": 0.81142486,
+   "buying": 0.81103001,
+   "selling": 0.81103001,
    "source": "market"
   },
   "SDG": {
-   "buying": 0.0194947,
-   "selling": 0.0194947,
+   "buying": 0.01948824,
+   "selling": 0.01948824,
    "source": "market"
   },
   "SEK": {
@@ -739,128 +739,128 @@
    "source": "bog"
   },
   "SGD": {
-   "buying": 9.10829766,
-   "selling": 9.10829766,
+   "buying": 9.10415149,
+   "selling": 9.10415149,
    "source": "market"
   },
   "SHP": {
-   "buying": 15.51470018,
-   "selling": 15.51470018,
+   "buying": 15.50868486,
+   "selling": 15.50868486,
    "source": "market"
   },
   "SLE": {
-   "buying": 0.50436274,
-   "selling": 0.50436274,
+   "buying": 0.50418473,
+   "selling": 0.50418473,
    "source": "market"
   },
   "SNX": {
-   "buying": 1.74699953,
-   "selling": 1.74699953,
+   "buying": 1.73094233,
+   "selling": 1.73094233,
    "source": "market"
   },
   "SOL": {
-   "buying": 849.25690021,
-   "selling": 849.25690021,
+   "buying": 842.88604181,
+   "selling": 842.88604181,
    "source": "market"
   },
   "SOS": {
-   "buying": 0.02051072,
-   "selling": 0.02051072,
+   "buying": 0.02051787,
+   "selling": 0.02051787,
    "source": "market"
   },
   "SRD": {
-   "buying": 0.31191516,
-   "selling": 0.31191516,
+   "buying": 0.31180818,
+   "selling": 0.31180818,
    "source": "market"
   },
   "SSP": {
-   "buying": 0.00197957,
-   "selling": 0.00197957,
+   "buying": 0.00197887,
+   "selling": 0.00197887,
    "source": "market"
   },
   "STN": {
-   "buying": 0.53590568,
-   "selling": 0.53590568,
+   "buying": 0.53573342,
+   "selling": 0.53573342,
    "source": "market"
   },
   "SUI": {
-   "buying": 8.62887221,
-   "selling": 8.62887221,
+   "buying": 8.41963459,
+   "selling": 8.41963459,
    "source": "market"
   },
   "SVC": {
-   "buying": 1.33680904,
-   "selling": 1.33680904,
+   "buying": 1.33634456,
+   "selling": 1.33634456,
    "source": "market"
   },
   "SYP": {
-   "buying": 0.09600522,
-   "selling": 0.09600522,
+   "buying": 0.09597297,
+   "selling": 0.09597297,
    "source": "market"
   },
   "SZL": {
-   "buying": 0.69309676,
-   "selling": 0.69309676,
+   "buying": 0.69285665,
+   "selling": 0.69285665,
    "source": "market"
   },
   "THB": {
-   "buying": 0.3461645,
-   "selling": 0.3461645,
+   "buying": 0.34604471,
+   "selling": 0.34604471,
    "source": "market"
   },
   "TJS": {
-   "buying": 1.27323657,
-   "selling": 1.27323657,
+   "buying": 1.27300965,
+   "selling": 1.27300965,
    "source": "market"
   },
   "TMT": {
-   "buying": 3.35143106,
-   "selling": 3.35143106,
+   "buying": 3.35030823,
+   "selling": 3.35030823,
    "source": "market"
   },
   "TND": {
-   "buying": 3.87777261,
-   "selling": 3.87777261,
+   "buying": 3.87762224,
+   "selling": 3.87762224,
    "source": "market"
   },
   "TOP": {
-   "buying": 4.8600311,
-   "selling": 4.8600311,
+   "buying": 4.85790624,
+   "selling": 4.85790624,
    "source": "market"
   },
   "TRY": {
-   "buying": 0.23288309,
-   "selling": 0.23288309,
+   "buying": 0.23276926,
+   "selling": 0.23276926,
    "source": "market"
   },
   "TTD": {
-   "buying": 1.73767985,
-   "selling": 1.73767985,
+   "buying": 1.73707615,
+   "selling": 1.73707615,
    "source": "market"
   },
   "TWD": {
-   "buying": 0.35621416,
-   "selling": 0.35621416,
+   "buying": 0.35589722,
+   "selling": 0.35589722,
    "source": "market"
   },
   "TZS": {
-   "buying": 0.00443145,
-   "selling": 0.00443145,
+   "buying": 0.00443086,
+   "selling": 0.00443086,
    "source": "market"
   },
   "UAH": {
-   "buying": 0.25820445,
-   "selling": 0.25820445,
+   "buying": 0.25811114,
+   "selling": 0.25811114,
    "source": "market"
   },
   "UGX": {
-   "buying": 0.00283865,
-   "selling": 0.00283865,
+   "buying": 0.00283817,
+   "selling": 0.00283817,
    "source": "market"
   },
   "UNI": {
-   "buying": 60.56568348,
-   "selling": 60.56568348,
+   "buying": 60.3646022,
+   "selling": 60.3646022,
    "source": "market"
   },
   "USD": {
@@ -869,78 +869,78 @@
    "source": "bog"
   },
   "USDC": {
-   "buying": 11.72731644,
-   "selling": 11.72731644,
+   "buying": 11.7236043,
+   "selling": 11.7236043,
    "source": "market"
   },
   "USDT": {
-   "buying": 11.72401665,
-   "selling": 11.72401665,
+   "buying": 11.71454009,
+   "selling": 11.71454009,
    "source": "market"
   },
   "UYU": {
-   "buying": 0.28881701,
-   "selling": 0.28881701,
+   "buying": 0.28871694,
+   "selling": 0.28871694,
    "source": "market"
   },
   "UZS": {
-   "buying": 0.00097731,
-   "selling": 0.00097731,
+   "buying": 0.00097697,
+   "selling": 0.00097697,
    "source": "market"
   },
   "VES": {
-   "buying": 0.01284555,
-   "selling": 0.01284555,
+   "buying": 0.01284126,
+   "selling": 0.01284126,
    "source": "market"
   },
   "VND": {
-   "buying": 0.00045514,
-   "selling": 0.00045514,
+   "buying": 0.00045466,
+   "selling": 0.00045466,
    "source": "market"
   },
   "VUV": {
-   "buying": 0.09750675,
-   "selling": 0.09750675,
+   "buying": 0.09747349,
+   "selling": 0.09747349,
    "source": "market"
   },
   "WST": {
-   "buying": 4.23585225,
-   "selling": 4.23585225,
+   "buying": 4.21780758,
+   "selling": 4.21780758,
    "source": "market"
   },
   "XAF": {
-   "buying": 0.01974295,
-   "selling": 0.01974295,
+   "buying": 0.01972659,
+   "selling": 0.01972659,
    "source": "market"
   },
   "XAG": {
-   "buying": 579.0387956,
-   "selling": 579.0387956,
+   "buying": 578.83769391,
+   "selling": 578.83769391,
    "source": "market"
   },
   "XAU": {
-   "buying": 45682.96025582,
-   "selling": 45682.96025582,
+   "buying": 45583.00665512,
+   "selling": 45583.00665512,
    "source": "market"
   },
   "XCD": {
-   "buying": 4.25242388,
-   "selling": 4.25242388,
+   "buying": 4.25097772,
+   "selling": 4.25097772,
    "source": "market"
   },
   "XCG": {
-   "buying": 6.51465798,
-   "selling": 6.51465798,
+   "buying": 6.51253663,
+   "selling": 6.51253663,
    "source": "market"
   },
   "XDR": {
-   "buying": 15.81677844,
-   "selling": 15.81677844,
+   "buying": 15.80802732,
+   "selling": 15.80802732,
    "source": "market"
   },
   "XLM": {
-   "buying": 1.6578799,
-   "selling": 1.6578799,
+   "buying": 1.61059125,
+   "selling": 1.61059125,
    "source": "market"
   },
   "XOF": {
@@ -949,33 +949,33 @@
    "source": "bog"
   },
   "XPD": {
-   "buying": 11992.99609028,
-   "selling": 11992.99609028,
+   "buying": 11988.97014746,
+   "selling": 11988.97014746,
    "source": "market"
   },
   "XPF": {
-   "buying": 0.10817243,
-   "selling": 0.10817243,
+   "buying": 0.10813617,
+   "selling": 0.10813617,
    "source": "market"
   },
   "XPT": {
-   "buying": 17703.81517217,
-   "selling": 17703.81517217,
+   "buying": 17697.86209826,
+   "selling": 17697.86209826,
    "source": "market"
   },
   "XRP": {
-   "buying": 11.52804196,
-   "selling": 11.52804196,
+   "buying": 11.44806585,
+   "selling": 11.44806585,
    "source": "market"
   },
   "XTZ": {
-   "buying": 2.53981155,
-   "selling": 2.53981155,
+   "buying": 2.50859193,
+   "selling": 2.50859193,
    "source": "market"
   },
   "YER": {
-   "buying": 0.0495491,
-   "selling": 0.0495491,
+   "buying": 0.04955156,
+   "selling": 0.04955156,
    "source": "market"
   },
   "ZAR": {
@@ -984,20 +984,20 @@
    "source": "bog"
   },
   "ZEC": {
-   "buying": 10672.92811783,
-   "selling": 10672.92811783,
+   "buying": 10604.90370747,
+   "selling": 10604.90370747,
    "source": "market"
   },
   "ZMW": {
-   "buying": 0.57162456,
-   "selling": 0.57162456,
+   "buying": 0.57146123,
+   "selling": 0.57146123,
    "source": "market"
   },
   "ZWG": {
-   "buying": 0.43867345,
-   "selling": 0.43867345,
+   "buying": 0.43851956,
+   "selling": 0.43851956,
    "source": "market"
   }
  },
- "updated_at": "2026-11-16T22:15:00+00:00"
+ "updated_at": "2026-11-17T04:37:17+00:00"
 }
