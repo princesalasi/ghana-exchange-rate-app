@@ -79,8 +79,8 @@
    "source": "market"
   },
   "AWG": {
-   "buying": 6.56426415,
-   "selling": 6.56426415,
+   "buying": 6.56771312,
+   "selling": 6.56771312,
    "source": "market"
   },
   "AXS": {
@@ -94,13 +94,13 @@
    "source": "market"
   },
   "BAM": {
-   "buying": 6.62339383,
-   "selling": 6.62339383,
+   "buying": 6.62383255,
+   "selling": 6.62383255,
    "source": "market"
   },
   "BBD": {
-   "buying": 5.74217628,
-   "selling": 5.74217628,
+   "buying": 5.75738384,
+   "selling": 5.75738384,
    "source": "market"
   },
   "BCH": {
@@ -139,8 +139,8 @@
    "source": "market"
   },
   "BRL": {
-   "buying": 1.99553001,
-   "selling": 1.99553001,
+   "buying": 1.99549019,
+   "selling": 1.99549019,
    "source": "market"
   },
   "BSD": {
@@ -234,13 +234,13 @@
    "source": "market"
   },
   "CVE": {
-   "buying": 0.11749087,
-   "selling": 0.11749087,
+   "buying": 0.11749501,
+   "selling": 0.11749501,
    "source": "market"
   },
   "CZK": {
-   "buying": 0.52991362,
-   "selling": 0.52991362,
+   "buying": 0.52988554,
+   "selling": 0.52988554,
    "source": "market"
   },
   "DJF": {
@@ -314,8 +314,8 @@
    "source": "market"
   },
   "FKP": {
-   "buying": 15.48898733,
-   "selling": 15.48898733,
+   "buying": 15.48946716,
+   "selling": 15.48946716,
    "source": "market"
   },
   "GBP": {
@@ -329,8 +329,8 @@
    "source": "market"
   },
   "GGP": {
-   "buying": 15.48514974,
-   "selling": 15.48514974,
+   "buying": 15.48538953,
+   "selling": 15.48538953,
    "source": "market"
   },
   "GIP": {
@@ -354,8 +354,8 @@
    "source": "market"
   },
   "GYD": {
-   "buying": 0.05564675,
-   "selling": 0.05564675,
+   "buying": 0.05574695,
+   "selling": 0.05574695,
    "source": "market"
   },
   "HBAR": {
@@ -379,8 +379,8 @@
    "source": "market"
   },
   "HUF": {
-   "buying": 0.03484078,
-   "selling": 0.03484078,
+   "buying": 0.03482743,
+   "selling": 0.03482743,
    "source": "market"
   },
   "ICP": {
@@ -399,8 +399,8 @@
    "source": "market"
   },
   "IMP": {
-   "buying": 15.48514974,
-   "selling": 15.48514974,
+   "buying": 15.48538953,
+   "selling": 15.48538953,
    "source": "market"
   },
   "INR": {
@@ -424,8 +424,8 @@
    "source": "market"
   },
   "JEP": {
-   "buying": 15.48514974,
-   "selling": 15.48514974,
+   "buying": 15.48538953,
+   "selling": 15.48538953,
    "source": "market"
   },
   "JMD": {
@@ -509,8 +509,8 @@
    "source": "market"
   },
   "LRD": {
-   "buying": 0.06998684,
-   "selling": 0.06998684,
+   "buying": 0.07011738,
+   "selling": 0.07011738,
    "source": "market"
   },
   "LSL": {
@@ -674,8 +674,8 @@
    "source": "market"
   },
   "PLN": {
-   "buying": 2.91698267,
-   "selling": 2.91698267,
+   "buying": 2.91613204,
+   "selling": 2.91613204,
    "source": "market"
   },
   "POL": {
@@ -744,8 +744,8 @@
    "source": "market"
   },
   "SHP": {
-   "buying": 15.48898733,
-   "selling": 15.48898733,
+   "buying": 15.48946716,
+   "selling": 15.48946716,
    "source": "market"
   },
   "SLE": {
@@ -769,8 +769,8 @@
    "source": "market"
   },
   "SRD": {
-   "buying": 0.31396189,
-   "selling": 0.31396189,
+   "buying": 0.31433691,
+   "selling": 0.31433691,
    "source": "market"
   },
   "SSP": {
@@ -834,8 +834,8 @@
    "source": "market"
   },
   "TTD": {
-   "buying": 1.75137483,
-   "selling": 1.75137483,
+   "buying": 1.75021003,
+   "selling": 1.75021003,
    "source": "market"
   },
   "TWD": {
@@ -909,8 +909,8 @@
    "source": "market"
   },
   "XAF": {
-   "buying": 0.01974997,
-   "selling": 0.01974997,
+   "buying": 0.01975075,
+   "selling": 0.01975075,
    "source": "market"
   },
   "XAG": {
@@ -924,13 +924,13 @@
    "source": "market"
   },
   "XCD": {
-   "buying": 4.28982026,
-   "selling": 4.28982026,
+   "buying": 4.31313349,
+   "selling": 4.31313349,
    "source": "market"
   },
   "XCG": {
-   "buying": 6.53125204,
-   "selling": 6.53125204,
+   "buying": 6.52230629,
+   "selling": 6.52230629,
    "source": "market"
   },
   "XDR": {
@@ -999,5 +999,5 @@
    "source": "market"
   }
  },
- "updated_at": "2026-11-21T11:18:29+00:00"
+ "updated_at": "2026-11-21T19:24:19+00:00"
 }
